@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+
+{% extends 'experiment/base.html' %}
+
+
+{% block content %}
+<section>
+    <h1>Informed consent to participate in the research study</h1>
+    <p>This experimental session is&nbsp;part of&nbsp;the research project carried out at&nbsp;the Department of&nbsp;Languages at&nbsp;the University of&nbsp;Helsinki. By&nbsp;agreeing, you certify your willingness to&nbsp;participate in&nbsp;the study and give&nbsp;us your consent to&nbsp;the use of&nbsp;the responses for research purposes. All your responses will be&nbsp;recorded automatically. Your participation in&nbsp;the study will be&nbsp;completely anonymous.</p>
+    <a href='{% url 'questionnaire' %}'>I agree</a>
+    <a href='{% url 'thanks' %}'>I don't agree</a>
+</section>
+{% endblock %}

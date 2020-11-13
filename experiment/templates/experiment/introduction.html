@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+
+{% extends 'experiment/base.html' %}
+
+
+{% block content %}
+<section>
+    <h1>Hi! Welcome to our study! </h1>
+    <p>Thank you for taking your time to&nbsp;take part in&nbsp;our speech experiment. Please make sure that your earphones are plugged&nbsp;in (we&nbsp;kindly ask you to&nbsp;avoid using Bluetooth earphones) and click on&nbsp;the button below to&nbsp;proceed. The experiment will take around 30&nbsp;minutes, and you can take as&nbsp;many short breaks as&nbsp;you would like.</p>
+    <a href='{% url 'consent' %}'>Start</a>
+</section>
+{% endblock %}
