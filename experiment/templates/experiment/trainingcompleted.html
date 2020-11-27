@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+
+<html lang="fi">
+
+
+{% extends 'experiment/base.html' %}
+
+
+{% block content %}
+<section>
+    <h1>Harjoitustehtävät suoritettu.</h1>
+    <p>Nyt olet valmis kokeeseen. Teht&auml;v&auml; kokeessa pysyy samana, mutta nyt kuulet jokaisen &auml;&auml;nitteen vain kerran. Aiemmin lukemasi ohjeet toistetaan ennen jokaista &auml;&auml;nitett&auml;, jotta voit tarvittaessa lukea ne&nbsp;uudestaan.</p>
+    <form method="post" action=''>{% csrf_token %}
+    <input type="submit" name='next' value ="Jatka">
+</form>
+</section>
+{% endblock %}

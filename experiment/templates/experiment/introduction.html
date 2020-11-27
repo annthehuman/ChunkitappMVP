@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html lang="en">
+<html lang="fi">
 
 
 {% extends 'experiment/base.html' %}
@@ -8,8 +8,11 @@
 
 {% block content %}
 <section>
-    <h1>Hi! Welcome to our study! </h1>
-    <p>Thank you for taking your time to&nbsp;take part in&nbsp;our speech experiment. Please make sure that your earphones are plugged&nbsp;in (we&nbsp;kindly ask you to&nbsp;avoid using Bluetooth earphones) and click on&nbsp;the button below to&nbsp;proceed. The experiment will take around 30&nbsp;minutes, and you can take as&nbsp;many short breaks as&nbsp;you would like.</p>
-    <a href='{% url 'consent' %}'>Start</a>
+    <h1>Hei! Tervetuloa tutkimukseen!</h1>
+    <p>T&auml;m&auml; tutkimus koostuu useista alla luetelluista teht&auml;vist&auml;. Tutkimuksen tavoitteena&nbsp;on, ett&auml; teet ne&nbsp;kaikki. Kun olet suorittanut yhden teht&auml;v&auml;n, sinut ohjataan automaattisesti seuraavaan. Jaksottamisteht&auml;v&auml; vie eniten aikaa, joten suosittelemme, ett&auml; pid&auml;t teht&auml;v&auml;n aikana lyhyen tauon.</p>
+    <p>Alustus  (~5-7 min) / </p>
+    <p>Jaksottamistehtävä (~30 min) / </p> 
+    <p>Palaute  (~5 min) / </p>
+    <a href='{% url 'consent' %}'>Jatka</a>
 </section>
 {% endblock %}

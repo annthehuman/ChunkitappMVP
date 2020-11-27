@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html lang="en">
+<html lang="fi">
 
 
 {% extends 'experiment/base.html' %}
@@ -8,9 +8,12 @@
 
 {% block content %}
 <section>
-    <h1>Informed consent to participate in the research study</h1>
-    <p>This experimental session is&nbsp;part of&nbsp;the research project carried out at&nbsp;the Department of&nbsp;Languages at&nbsp;the University of&nbsp;Helsinki. By&nbsp;agreeing, you certify your willingness to&nbsp;participate in&nbsp;the study and give&nbsp;us your consent to&nbsp;the use of&nbsp;the responses for research purposes. All your responses will be&nbsp;recorded automatically. Your participation in&nbsp;the study will be&nbsp;completely anonymous.</p>
-    <a href='{% url 'questionnaire' %}'>I agree</a>
-    <a href='{% url 'thanks' %}'>I don't agree</a>
+    <h1>Tietoon perustuva suostumus osallistua tutkimukseen.</h1>
+    <p>T&auml;m&auml; tutkimus on&nbsp;osa Helsingin yliopiston nykykielten laitoksen tutkimusta. Hyv&auml;ksym&auml;ll&auml; varmistat halukkuutesi osallistua tutkimukseen ja&nbsp;annat meille suostumuksesi vastausten k&auml;ytt&ouml;&ouml;n tutkimustarkoituksiin. Kaikki vastaukset tallennetaan automaattisesti. Kaikki vastaukset rekister&ouml;id&auml;&auml;n anonyymein&auml;.</p>
+    <form method="post">{% csrf_token %}
+    <input type="submit" name='consent' value ="Olen samaa mieltä">
+    <input type="submit" name='consent' value ="En ole samaa mieltä">
+</form>
+
 </section>
 {% endblock %}

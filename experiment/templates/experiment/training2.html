@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+
+<html lang="fi">
+
+
+{% extends 'experiment/base.html' %}
+
+
+{% block content %}
+
+
+
+    <h2>Harjoitustehtävä 2/3</h2>
+
+<div id='instructions_2' style='display: block;'>
+    <h2>Ohjeet</h2>
+    <p>Kuulet nyt saman &auml;&auml;nitteen uudestaan. T&auml;ll&auml; kertaa seuraa n&auml;it&auml; ohjeita: Teht&auml;v&auml;n&auml;si on&nbsp;merkit&auml; rajoja jaksojen v&auml;liin painamalla &rsquo;〜&rsquo; -symboleja. Yksi painallus tuo rajan n&auml;kyviin. Jos painat symbolia uudestaan, raja katoaa. Jos kadotat rivin teksti&auml; lukiessa, pyri pysym&auml;&auml;n puhujan tahdissa. &Auml;l&auml; palaa taaksep&auml;in.</p>
+<a href='#' onclick="displaytext();togglePlay();">Aloita</a>
+</div>
+
+
+<audio preload="auto" id="Player_1" >
+     <source src="../../audio/training_roolipelit.mp3"/>
+</audio>
+
+<div id="practice_1" style="display: none;">
+<a href="#" onclick="togglePlay();handler(this);">Tauko</a>
+    <article id='text_1' style="display: block;">
+    <form method="post"  class="post-form" id='post-form'>{% csrf_token %}
+        mul <input type="checkbox" name="check" value="0">
+        on <input type="checkbox" name="check" value="1">
+        oikeestaan <input type="checkbox" name="check" value="2">
+        niinku <input type="checkbox" name="check" value="3">
+        harrasteena <input type="checkbox" name="check" value="4">
+        tota <input type="checkbox" name="check" value="5">
+        nii <input type="checkbox" name="check" value="6">
+        nuoruusvuosilta <input type="checkbox" name="check" value="7">
+        niin <input type="checkbox" name="check" value="8">
+        roolipelitausta <input type="checkbox" name="check" value="9">
+        kynä <input type="checkbox" name="check" value="10">
+        ja <input type="checkbox" name="check" value="11">
+        paperi <input type="checkbox" name="check" value="12">
+        roolipelejä <input type="checkbox" name="check" value="13">
+        ja <input type="checkbox" name="check" value="14">
+        sitä <input type="checkbox" name="check" value="15">
+        kautta <input type="checkbox" name="check" value="16">
+        niinku <input type="checkbox" name="check" value="17">
+        intohimo <input type="checkbox" name="check" value="18">
+        kirjottamiseen <input type="checkbox" name="check" value="19">
+        oli <input type="checkbox" name="check" value="20">
+        läsnä <input type="checkbox" name="check" value="21">
+        ja <input type="checkbox" name="check" value="22">
+        kirjotin <input type="checkbox" name="check" value="23">
+        niissä <input type="checkbox" name="check" value="24">
+        harrastuspiireissä <input type="checkbox" name="check" value="25">
+        paljonkin <input type="checkbox" name="check" value="26">
+        tarinoita <input type="checkbox" name="check" value="27">
+        jotka <input type="checkbox" name="check" value="28">
+        linkitty <input type="checkbox" name="check" value="29">
+        roolipeleihin <input type="checkbox" name="check" value="30">
+        ja <input type="checkbox" name="check" value="31">
+        ja <input type="checkbox" name="check" value="32">
+        sitten <input type="checkbox" name="check" value="33">
+        menin <input type="checkbox" name="check" value="34">
+        englantilaista <input type="checkbox" name="check" value="35">
+        filologiaa <input type="checkbox" name="check" value="36">
+        opiskeleen <input type="checkbox" name="check" value="37">
+        yliopistolle <input type="checkbox" name="check" value="38">
+        öö <input type="checkbox" name="check" value="39">
+        kirjottelin <input type="checkbox" name="check" value="40">
+        englanniks <input type="checkbox" name="check" value="41">
+        koska <input type="checkbox" name="check" value="42">
+        roolipelimateriaalit <input type="checkbox" name="check" value="43">
+        lähtöjään <input type="checkbox" name="check" value="44">
+        oli <input type="checkbox" name="check" value="45">
+        aina <input type="checkbox" name="check" value="46">
+        aina <input type="checkbox" name="check" value="47">
+        englanniks
+    </article>
+</div>
+
+
+<div id="popup" style="display: none;">
+    <div id="okno">
+        Onko puhuja harrastanut roolipelejä?
+        <a href='{% url 'training3' %}'>Kyllä</a>
+        <a href='{% url 'training3' %}'>Ei</a>
+        </form>
+    </div>
+</div>
+
+<script type="text/javascript">
+    function displaytext() {
+        document.getElementById('instructions_2').style.display = 'none';
+        document.getElementById('practice_1').style.display = 'block';  
+    };
+
+    var myAudio = document.getElementById("Player_1");
+    var isPlaying = false;
+
+    function togglePlay() {
+      isPlaying ? myAudio.pause() : myAudio.play();
+
+    };
+
+    myAudio.onplaying = function() {
+      isPlaying = true;
+      document.getElementById('text_1').style.display='block';
+    };
+    myAudio.onpause = function() {
+      isPlaying = false;
+      document.getElementById('text_1').style.display='none';
+    };
+
+    myAudio.onended=function () {
+        document.getElementById("popup").style.display = "block";
+        document.getElementById("practice_1").style.display = "none";
+    };
+
+
+
+    function handler(lnk_obj){
+      lnk_obj.innerHTML = (lnk_obj.innerHTML == 'Tauko') ? 'Edetä' : 'Tauko' ;
+    };
+
+</script>
+{% endblock %}

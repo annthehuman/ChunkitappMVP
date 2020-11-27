@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+
+<html lang="fi">
+
+
+{% extends 'experiment/base.html' %}
+
+
+{% block content %}
+
+<div id='instructions_1' style='display: block;'>
+    <h2>Ohjeet</h2>
+    <p>Hienoa! Seuraava &auml;&auml;nite. Noudata samoja ohjeita kuin aikaisemminkin: Teht&auml;v&auml;n&auml;si on&nbsp;merkit&auml; rajoja jaksojen v&auml;liin painamalla &rsquo;〜&rsquo; -symboleja. Yksi painallus tuo rajan n&auml;kyviin. Jos painat symbolia uudestaan, raja katoaa. Jos kadotat rivin teksti&auml; lukiessa, pyri pysym&auml;&auml;n puhujan tahdissa. &Auml;l&auml; palaa taaksep&auml;in. Katkelman j&auml;lkeen sinulle esitet&auml;&auml;n kuullun ymm&auml;rt&auml;miseen liittyv&auml; kysymys</p>
+<a href="#" onclick="nextpart();audioplay();">Aloita</a>
+
+</div>
+
+
+<audio preload="auto" id="Player_1" onended="audioend();">
+     <source src="../../audio/practice_ajantaju.mp3"/>
+</audio>
+
+
+
+<div id="practice_1" style="display: none;">
+    <h2>Vaihe 1/3</h2>
+<a href="#" onclick="togglePlay();handler(this);">Tauko</a>
+    <article id='text_1' style="display: block;">
+    <form method="post"  class="post-form" id='post-form-1'>{% csrf_token %}
+        on <input type="checkbox" class="checkbox" name="check" value="0">
+        ainaki <input type="checkbox" class="checkbox" name="check" value="1">
+        itellä <input type="checkbox" class="checkbox" name="check" value="2">
+        tuntunu <input type="checkbox" class="checkbox" name="check" value="3">
+        siltä <input type="checkbox" class="checkbox" name="check" value="4">
+        et <input type="checkbox" class="checkbox" name="check" value="5">
+        jotenki <input type="checkbox" class="checkbox" name="check" value="6">
+        ajantaju <input type="checkbox" class="checkbox" name="check" value="7">
+        vähä <input type="checkbox" class="checkbox" name="check" value="8">
+        hämärtyy <input type="checkbox" class="checkbox" name="check" value="9">
+        sekä <input type="checkbox" class="checkbox" name="check" value="10">
+        semmosel <input type="checkbox" class="checkbox" name="check" value="11">
+        ehkä <input type="checkbox" class="checkbox" name="check" value="12">
+        päivätasolla <input type="checkbox" class="checkbox" name="check" value="13">
+        kuitenki <input type="checkbox" class="checkbox" name="check" value="14">
+        tuntuu <input type="checkbox" class="checkbox" name="check" value="15">
+        et <input type="checkbox" class="checkbox" name="check" value="16">
+        joka <input type="checkbox" class="checkbox" name="check" value="17">
+        päivä <input type="checkbox" class="checkbox" name="check" value="18">
+        vaan <input type="checkbox" class="checkbox" name="check" value="19">
+        toistaa <input type="checkbox" class="checkbox" name="check" value="20">
+        itteään <input type="checkbox" class="checkbox" name="check" value="21">
+        ja <input type="checkbox" class="checkbox" name="check" value="22">
+        joka <input type="checkbox" class="checkbox" name="check" value="23">
+        päivä <input type="checkbox" class="checkbox" name="check" value="24">
+        tekee <input type="checkbox" class="checkbox" name="check" value="25">
+        ne <input type="checkbox" class="checkbox" name="check" value="26">
+        ainaki <input type="checkbox" class="checkbox" name="check" value="27">
+        suunnilleen <input type="checkbox" class="checkbox" name="check" value="28">
+        suunnilleen <input type="checkbox" class="checkbox" name="check" value="29">
+        samat <input type="checkbox" class="checkbox" name="check" value="30">
+        asiat <input type="checkbox" class="checkbox" name="check" value="31">
+        mut <input type="checkbox" class="checkbox" name="check" value="32">
+        sit <input type="checkbox" class="checkbox" name="check" value="33">
+        myös <input type="checkbox" class="checkbox" name="check" value="34">
+        ehdottomasti <input type="checkbox" class="checkbox" name="check" value="35">
+        viikkotasolla <input type="checkbox" class="checkbox" name="check" value="36">
+        tai <input type="checkbox" class="checkbox" name="check" value="37">
+        jotenki <input type="checkbox" name="check" value="38">
+        lokakuu <input type="checkbox" name="check" value="39">
+        meni <input type="checkbox" name="check" value="40">
+        hirmu <input type="checkbox" name="check" value="41">
+        nopeesti <input type="checkbox" name="check" value="42">
+        ja <input type="checkbox" name="check" value="43">
+        jotenki <input type="checkbox" name="check" value="44">
+        ei <input type="checkbox" name="check" value="45">
+        tunnu <input type="checkbox" name="check" value="46">
+        olevan <input type="checkbox" name="check" value="47">
+        enää <input type="checkbox" name="check" value="48">
+        mitään <input type="checkbox" name="check" value="49">
+        merkitystä <input type="checkbox" name="check" value="50">
+        jotenki <input type="checkbox" name="check" value="51">
+        sillä <input type="checkbox" name="check" value="52">
+        et <input type="checkbox" name="check" value="53">
+        mikä <input type="checkbox" name="check" value="54">
+        viikko <input type="checkbox" name="check" value="55">
+        on <input type="checkbox" name="check" value="56">
+        tai <input type="checkbox" name="check" value="57">
+        mikä <input type="checkbox" name="check" value="58">
+        kuukausi <input type="checkbox" name="check" value="59">
+        on <input type="checkbox" name="check" value="60">
+        tai <input type="checkbox" name="check" value="61">
+        mikä <input type="checkbox" name="check" value="62">
+        vuodenaika <input type="checkbox" name="check" value="63">
+        on <input type="checkbox" name="check" value="64">
+        et <input type="checkbox" name="check" value="65">
+        kaikki <input type="checkbox" name="check" value="66">
+        on <input type="checkbox" name="check" value="67">
+        vaan <input type="checkbox" name="check" value="68">
+        tällästä <input type="checkbox" name="check" value="69">
+        samaa <input type="checkbox" name="check" value="70">
+        samanlaista <input type="checkbox" name="check" value="71">
+        koko <input type="checkbox" name="check" value="72">
+        ajan
+    </article>
+</div>
+
+
+<div id="popup_1" style="display: none;">
+    <div id="okno_1">
+        Ovatko puhujan mielestä päivät yleensä samanlaisia?
+        <input type="submit" name="send1" value ="Kyllä" onclick='instruction();'>
+        <input type="submit" name="send1" value ="Ei" onclick='instruction();'>
+        </form>
+    </div>
+</div>
+
+
+
+<audio preload="auto" id="Player_2" onended="audioend();">
+     <source src="../../audio/practice_palace.mp3"/>
+</audio>
+
+
+
+<div id="practice_2" style="display: none;">
+    <h2>Vaihe 2/3</h2>
+<a href="#" onclick="togglePlay();handler(this);">Tauko</a>
+    <article id='text_2' style="display: block;">
+    <form method="post"  class="post-form" id='post-form-2'>{% csrf_token %}
+        joskus <input type="checkbox" name="check" value="0">
+        kaheksankytluvun <input type="checkbox" name="check" value="1">
+        alussahan <input type="checkbox" name="check" value="2">
+        joku <input type="checkbox" name="check" value="3">
+        mies <input type="checkbox" name="check" value="4">
+        onnistu <input type="checkbox" name="check" value="5">
+        murtautumaan <input type="checkbox" name="check" value="6">
+        tonne <input type="checkbox" name="check" value="7">
+        kuningattaren <input type="checkbox" name="check" value="8">
+        palatsiin <input type="checkbox" name="check" value="9">
+        Lontoossa <input type="checkbox" name="check" value="10">
+        ei <input type="checkbox" name="check" value="11">
+        siinä <input type="checkbox" name="check" value="12">
+        et <input type="checkbox" name="check" value="13">
+        se <input type="checkbox" name="check" value="14">
+        onnistu <input type="checkbox" name="check" value="15">
+        murtautuun <input type="checkbox" name="check" value="16">
+        sinne <input type="checkbox" name="check" value="17">
+        sen <input type="checkbox" name="check" value="18">
+        yhen <input type="checkbox" name="check" value="19">
+        kerran <input type="checkbox" name="check" value="20">
+        mutta <input type="checkbox" name="check" value="21">
+        kun <input type="checkbox" name="check" value="22">
+        sinä <input type="checkbox" name="check" value="23">
+        ensimmäisenä <input type="checkbox" name="check" value="24">
+        iltana <input type="checkbox" name="check" value="25">
+        kun <input type="checkbox" name="check" value="26">
+        se <input type="checkbox" name="check" value="27">
+        murtautu <input type="checkbox" name="check" value="28">
+        sinne <input type="checkbox" name="check" value="29">
+        ja <input type="checkbox" name="check" value="30">
+        kuningatar <input type="checkbox" name="check" value="31">
+        ei <input type="checkbox" name="check" value="32">
+        ollu <input type="checkbox" name="check" value="33">
+        paikalla <input type="checkbox" name="check" value="34">
+        niin <input type="checkbox" name="check" value="35">
+        se <input type="checkbox" name="check" value="36">
+        onnistu <input type="checkbox" name="check" value="37">
+        myös <input type="checkbox" name="check" value="38">
+        seuraavana <input type="checkbox" name="check" value="39">
+        pä <input type="checkbox" name="check" value="40">
+        yönä <input type="checkbox" name="check" value="41">
+        murtautuun <input type="checkbox" name="check" value="42">
+        sinne <input type="checkbox" name="check" value="43">
+        ja <input type="checkbox" name="check" value="44">
+        sinä <input type="checkbox" name="check" value="45">
+        iltana <input type="checkbox" name="check" value="46">
+        sitten <input type="checkbox" name="check" value="47">
+        jutteli <input type="checkbox" name="check" value="48">
+        hetken <input type="checkbox" name="check" value="49">
+        kuningattaren <input type="checkbox" name="check" value="50">
+        kaa <input type="checkbox" name="check" value="51">
+        ennen <input type="checkbox" name="check" value="52">
+        ku <input type="checkbox" name="check" value="53">
+        se <input type="checkbox" name="check" value="54">
+        vietiin <input type="checkbox" name="check" value="55">
+        sieltä <input type="checkbox" name="check" value="56">
+        pois
+    </article>
+</div>
+
+
+<div id="popup_2" style="display: none;">
+    <div id="okno_2">
+        Murtautuiko mies palatsiin vain kerran?
+        <input type="submit" name="send1" value ="Kyllä" onclick='instruction();'>
+        <input type="submit" name="send1" value ="Ei" onclick='instruction();'>
+        </form>
+    </div>
+</div>
+
+
+
+
+<audio preload="auto" id="Player_3" onended="audioend();">
+     <source src="../../audio/practice_kenkasuunnittelija.mp3"/>
+</audio>
+
+
+
+<div id="practice_3" style="display: none;">
+    <h2>Vaihe 3/43</h2>
+<a href="#" onclick="togglePlay();handler(this);">Tauko</a>
+    <article id='text_3' style="display: block;">
+    <form method="post"  class="post-form" id='post-form-3'>{% csrf_token %}
+        se <input type="checkbox" class='checkbox' name="check" value="0">
+        että <input type="checkbox" class='checkbox' name="check" value="1">
+        mä <input type="checkbox" name="check" value="2">
+        oon <input type="checkbox" name="check" value="3">
+        saanu <input type="checkbox" name="check" value="4">
+        tän <input type="checkbox" name="check" value="5">
+        brändin <input type="checkbox" name="check" value="6">
+        oikeesti <input type="checkbox" name="check" value="7">
+        bisnes <input type="checkbox" name="check" value="8">
+        puolella <input type="checkbox" name="check" value="9">
+        toimimaan <input type="checkbox" name="check" value="10">
+        on <input type="checkbox" name="check" value="11">
+        ollu <input type="checkbox" name="check" value="12">
+        niinku <input type="checkbox" name="check" value="13">
+        vaatinu <input type="checkbox" name="check" value="14">
+        ihan <input type="checkbox" name="check" value="15">
+        hirveen <input type="checkbox" name="check" value="16">
+        panostuksen <input type="checkbox" name="check" value="17">
+        se <input type="checkbox" name="check" value="18">
+        on <input type="checkbox" name="check" value="19">
+        ollu <input type="checkbox" name="check" value="20">
+        myöskin <input type="checkbox" name="check" value="21">
+        se <input type="checkbox" name="check" value="22">
+        kaikkein <input type="checkbox" name="check" value="23">
+        mielenkiintoisin <input type="checkbox" name="check" value="24">
+        osio <input type="checkbox" name="check" value="25">
+        tästä <input type="checkbox" name="check" value="26">
+        tekemisessä <input type="checkbox" name="check" value="27">
+        mä <input type="checkbox" name="check" value="28">
+        oon <input type="checkbox" name="check" value="29">
+        saanu <input type="checkbox" name="check" value="30">
+        koulutuksen <input type="checkbox" name="check" value="31">
+        kenkäsuunnitteluun <input type="checkbox" name="check" value="32">
+        mä <input type="checkbox" name="check" value="33">
+        tiedän <input type="checkbox" name="check" value="34">
+        ihan <input type="checkbox" name="check" value="35">
+        tasan <input type="checkbox" name="check" value="36">
+        tarkkaan <input type="checkbox" name="check" value="37">
+        miten <input type="checkbox" name="check" value="38">
+        se <input type="checkbox" name="check" value="39">
+        homma <input type="checkbox" name="check" value="40">
+        pyörii <input type="checkbox" name="check" value="41">
+        mut <input type="checkbox" name="check" value="42">
+        sit <input type="checkbox" name="check" value="43">
+        se <input type="checkbox" name="check" value="44">
+        kaikki <input type="checkbox" name="check" value="45">
+        muu <input type="checkbox" name="check" value="46">
+        kaikki <input type="checkbox" name="check" value="47">
+        muu <input type="checkbox" name="check" value="48">
+        niinku <input type="checkbox" name="check" value="49">
+        brändin <input type="checkbox" name="check" value="50">
+        rakentaminen <input type="checkbox" name="check" value="51">
+        paperin <input type="checkbox" name="check" value="52">
+        pyörittäminen <input type="checkbox" name="check" value="53">
+        käytännön <input type="checkbox" name="check" value="54">
+        toiminnot <input type="checkbox" name="check" value="55">
+        niin <input type="checkbox" name="check" value="56">
+        ne <input type="checkbox" name="check" value="57">
+        mä <input type="checkbox" name="check" value="58">
+        oon <input type="checkbox" name="check" value="59">
+        oppinu <input type="checkbox" name="check" value="60">
+        ihan <input type="checkbox" name="check" value="61">
+        täysin <input type="checkbox" name="check" value="62">
+        pelkästään <input type="checkbox" name="check" value="63">
+        kantapään <input type="checkbox" name="check" value="64">
+        kautta
+    </article>
+</div>
+
+
+<div id="popup_3" style="display: none;">
+    <div id="okno_3">
+        Ovatko puhujan mielestä päivät yleensä samanlaisia?
+        <input type="submit" name="send1" value ="Kyllä" onclick='instruction();'>
+        <input type="submit" name="send1" value ="Ei" onclick='instruction();'>
+        </form>
+    </div>
+
+
+<script type="text/javascript">
+
+    $(document).on('submit',"#post-form-1",function(e) {
+    e.preventDefault();
+    var searchIDs = $('.checkbox:checked').map(function(){
+      return $(this).val();
+    }).get();
+    console.log(searchIDs);
+    $.ajax({
+        type: 'POST',
+        url: '/data/',
+        data: {
+            check: searchIDs,
+            csrfmiddlewaretoken:$('input[name=csrfmiddlewaretoken]').val(),
+            index: id,
+},
+    })
+});
+
+
+    $(document).on('submit',"#post-form-2",function(e) {
+    e.preventDefault();
+    var searchIDs = $('.checkbox:checked').map(function(){
+      return $(this).val();
+    }).get();
+    console.log(searchIDs);
+    $.ajax({
+        type: 'POST',
+        url: '/data/',
+        data: {
+            check: searchIDs,
+            csrfmiddlewaretoken:$('input[name=csrfmiddlewaretoken]').val(),
+            index: id,
+},
+    })
+});
+
+        $(document).on('submit',"#post-form-3",function(e) {
+    e.preventDefault();
+    var searchIDs = $('.checkbox:checked').map(function(){
+      return $(this).val();
+    }).get();
+    console.log(searchIDs);
+    $.ajax({
+        type: 'POST',
+        url: '/data/',
+        data: {
+            check: searchIDs,
+            csrfmiddlewaretoken:$('input[name=csrfmiddlewaretoken]').val(),
+            index: id,
+},
+    })
+});
+
+
+let order = [1, 2, 3];
+
+function* iterateArray(array) {
+  for (const entry of array) {
+    yield entry;
+  }
+}
+const iterator = iterateArray(order);
+
+const adapter = iterator => () => {
+  const entry = iterator.next();
+
+  return entry.value;
+};
+
+const next = adapter(iterator);
+
+
+var id
+var id_next
+var myAudio
+
+    function nextpart() {
+        window.id = next();
+        var index = order.indexOf(id);
+        window.id_next = order[index + 1];
+        window.myAudio = document.getElementById('Player_'+id);
+        console.log(id, id_next)
+    };
+
+    console.log(myAudio);
+
+    function audioplay() {
+        console.log(id, 'id');
+        myAudio.play();
+        isPlaying = true;
+        document.getElementById('instructions_1').style.display = 'none';
+        document.getElementById('practice_'+id).style.display = 'block';
+    };
+
+    function togglePlay() {
+      console.log(myAudio)
+      if (isPlaying) {
+        myAudio.pause();
+        isPlaying = false;
+        document.getElementById('text_'+id).style.display='none';
+      }  else {
+        myAudio.play();
+        isPlaying = true;
+        document.getElementById('text_'+id).style.display='block';
+      }
+
+    };
+
+    function audioend() {
+        document.getElementById("popup_"+id).style.display = "block";
+        document.getElementById("practice_"+id).style.display = "none";
+}
+
+    function instruction() {
+        if (id_next === undefined){
+            window.location.href = '{% url 'trainingcompleted' %}';
+        } else {
+        document.getElementById('instructions_1').style.display = 'block';
+        document.getElementById("popup_"+id).style.display = "none";
+    }
+    }
+
+
+
+      /*  var id = order[i];
+        var id_next = order[i +1]
+        console.log(order[i + 1])
+        console.log('Player_'+id)
+    var myAudio = document.getElementById('Player_'+id);
+    var isPlaying = false;
+
+    function nextpart() {
+        document.getElementById(id).style.display = 'none';
+        document.getElementById(id_next).style.display = 'block';
+        console.log(document.getElementById(id).style.display);
+    };
+
+    function togglePlay() {
+      isPlaying ? myAudio.pause() : myAudio.play();
+
+    };
+
+    myAudio.onplaying = function() {
+      isPlaying = true;
+      document.getElementById('text_'+id).style.display='block';
+    };
+    myAudio.onpause = function() {
+      isPlaying = false;
+      document.getElementById('text_'+id).style.display='none';
+    };
+
+    myAudio.onended=function () {
+            document.getElementById("popup_"+id).style.display = "block";
+            document.getElementById("practice_"+id).style.display = "none";
+    };
+
+    function practice() {
+        document.getElementById("practice_"+id).style.display = "block";
+        document.getElementById('instructions_'+id).style.display = "none";
+    };
+
+
+};
+*/
+
+    function handler(lnk_obj){
+      lnk_obj.innerHTML = (lnk_obj.innerHTML == 'Tauko') ? 'Edetä' : 'Tauko' ;
+    };
+
+</script>
+{% endblock %}
