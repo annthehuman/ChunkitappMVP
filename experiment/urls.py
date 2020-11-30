@@ -17,7 +17,8 @@ urlpatterns = [
     path('get_challange', views.confirm, name='get_challange'),
     path('taskcompleted', views.taskcompleted, name='taskcompleted'),
     path('feedback', views.feedback, name='feedback'),
-    path('end', views.end, name='end')
+    path('end', views.end, name='end'),
+    path('passed', views.you_passed, name='passed'),
 ]
 
 

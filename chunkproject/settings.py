@@ -21,7 +21,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'xct-r0v&wu6e(k!c&n^j-1h7xqd!6y2j(gaj8#nuwkjw=_g3n!'
+SECRET_KEY  = os.environ['SECRET_KEY']
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -105,7 +105,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/3.1/topics/i18n/
 
-LANGUAGE_CODE = 'ru-ru'
+LANGUAGE_CODE = 'fi-FI'
 
 TIME_ZONE = 'Europe/Moscow'
 
@@ -127,4 +127,4 @@ MEDIA_URL = '/audio/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'audio')
 
 
-SESSION_ENGINE = "django.contrib.sessions.backends.signed_cookies"
+#SESSION_ENGINE = "django.contrib.sessions.backends.signed_cookies"

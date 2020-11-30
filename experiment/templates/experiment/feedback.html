@@ -5,10 +5,43 @@
 
 {% extends 'experiment/base.html' %}
 
-
 {% block content %}
-<section>
-    <h1>Questions</h1>
-    <a href='{% url 'end' %}'>Jatka</a>
+<section class='questionnaire'>
+    <h1>Palautekysely</h1>
+    <p>Ole hyvä ja vastaa alla oleviin kysymyksiin. Vastauksesi ovat meille tärkeitä!</p>
+    <h2>Väitteet</h2>
+<form method="post"  class="questions-form" autocomplete="off">{% csrf_token %}
+		<ul>
+			<li><label><div class='control-label'>Tehtävän ohjeet olivat selvät.</div>
+			{{ form.instructions }}</label></li>
+			<li><label><div class='control-label'>Tiesin mitä tein.</div>{{ form.doing }}</div></label></li>
+			<li><label><div class='control-label'>Tehtävä oli melko yksinkertainen.</div>{{ form.simple }}</div></label></li>			
+			<li><label><div class='control-label'>Tehtävä oli hyvin vaativa. Olen väsynyt.</div>{{ form.demanding }}</div></label></li>
+			<li><label><div class='control-label'>Tehtävä aiheutti minulle kovia paineita. </div>{{ form.pressure }}</div></label></li>
+			<li><label><div class='control-label'>Tehtävä oli hauska.</div>{{ form.fun }}</div></label></li>
+			<li><label><div class='control-label'>Mielestäni tehtävä heijastaa jollain tapaa sitä, mitä teen puhetta kuunnellessani.</div>{{ form.reflects }}</div></label></li>
+		</ul>
+	<h2>Suoritusarvio</h2>
+		<ul>
+			<li><label><div class='control-label'>Kuinka arvioisit suoritustasi tehtävässä?</div>{{ form.performance }}</div></label></li>
+		</ul>
+	<h2>Ymmärrys</h2>
+		<ul>
+			<li><label><div class='control-label'>Ymmärsin, mitä puhuja sanoi…</div>{{ form.understanding }}</div></label></li>
+		</ul>
+	<h2>Muuta</h2>
+			<li><label>Voitteko arvata, mitä osa-tehtävä mitattiin?
+			<div>{{ form.task }}</div></label></li>
+			<li><label>Hyväksyitkö tietoisesti jonkin strategian palojen välisten rajojen merkitsemisessä?
+			<div>{{ form.strategy }}</div></label></li>
+			<li><label>Mitä kriteereitä käytit rajojen merkitsemiseen, jos sellaisia on?
+			<div>{{ form.criteria }}</div></label></li>
+			<li><label>Saitko vaikutelman, että tehtävä helpottui vähitellen?
+			<div>{{ form.impression }}</div></label></li>
+			<li><label>Onko sinulla muita kommentteja?
+			<div>{{ form.comments }}</div></label></li>			
+		</ul>
+    <button type="submit" class='submitquestionnaire'>L&auml;het&auml;</button>
+</form>
 </section>
 {% endblock %}
