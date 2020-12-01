@@ -19,6 +19,7 @@ urlpatterns = [
     path('feedback', views.feedback, name='feedback'),
     path('end', views.end, name='end'),
     path('passed', views.you_passed, name='passed'),
+    path('results', views.results, name='results')
 ]
 
 

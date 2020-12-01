@@ -6,6 +6,8 @@ from .models import background, feedback, test, sessions
 from .forms import backgroundForm, feedbackForm
 import uuid
 import random
+from django.contrib.sessions.models import Session
+
 
 def introduction(request):
 	return render(request, 'experiment/introduction.html', {})
@@ -22,29 +24,32 @@ def consent(request):
 	if request.method == 'POST':
 		if request.POST['consent'] == "Olen samaa mieltä":
 			ip = get_ip(request)
-			print(ip)
-			if sessions.objects.filter(ip=str(ip)):
-				for i in sessions.objects.filter(ip=str(ip)):
-					print(i.ip)
-				print('IP found')
-				return redirect('passed')
+			#print(ip)
+			#if sessions.objects.filter(ip=str(ip)):
+				#for i in sessions.objects.filter(ip=str(ip)):
+					#print(i.ip)
+				#print('IP found')
+			#if request.session.session_key:
+				#return redirect('passed')
+			#else:
 			if request.session.session_key:
-				return redirect('passed')
-			else:
-				global x
-				x = str(uuid.uuid4())
-				request.session.set_expiry(2000)
-				request.session[x]=x
-				#session = request.session.session_key
-				print(request.session[x])
-				request.session.save()
-				session = request.session.session_key
-				print(request.session.session_key)
-				sessions.objects.create(
-					session_id = request.session[x],
-					session_key = session,
-					ip = ip
-					)
+				session_key = request.session.session_key
+				session = Session.objects.get(session_key=session_key)
+				#print(session)
+				Session.objects.filter(session_key=session).delete()
+			global x
+			x = str(uuid.uuid4())
+			request.session.set_expiry(3600)
+			request.session[x]=x
+			#print(request.session[x])
+			request.session.save()
+			session = request.session.session_key
+			#print(request.session.session_key)
+			sessions.objects.create(
+				session_id = request.session[x],
+				session_key = session,
+				ip = ip
+				)
 			#print(request.session[x])
 			return redirect('questionnaire')
 		elif request.POST['consent'] == "En ole samaa mieltä":
@@ -77,7 +82,7 @@ def data(request):
 			index = index,
 			question = question
 			)
-		print(checkboxes, question, session, index)
+		#print(checkboxes, question, session, index)
 		return HttpResponse('')
 
 
@@ -106,7 +111,7 @@ def confirm(request):
 
 
 def challange(request):
-	print(request.session)
+	#print(request.session)
 	return render(request, 'experiment/challange.html', {})
 
 def thanks(request):
@@ -126,3 +131,77 @@ def feedback(request):
 
 def end(request):
 	return render(request, 'experiment/end.html', {})
+
+
+
+def results(request):
+	f_texts = open('texts.txt', 'r')
+	texts = [[0 for i in range(0, 3)] for n in range (0, 43)]
+	ii = 0
+	for line in f_texts:
+		n = line.split()
+		texts[ii][0] = int(n[0])
+		texts[ii][1] = n[1]
+		texts[ii][2] = int(n[2])
+		ii += 1
+	f_texts.close()
+	checkboxes = list(test.objects.all().values_list('checkbox'))
+	session = test.objects.all().values_list('session_key')
+	text_from_user = test.objects.all().values_list('index')
+	question = test.objects.all().values_list('question')
+	session_list = []
+	for i in session:
+		for n in i:
+			session_list.append(n)
+	question_list = []
+	for i in question:
+		for n in i:
+			question_list.append(n)
+	text_from_user_list = []
+	for i in text_from_user:
+		for n in i:
+			text_from_user_list.append(n)
+	check_list = []
+	for i in checkboxes:
+		for n in i:
+			k_list = []
+			for k in n.split(','):
+				k = k.replace("'", "").replace('[', '').replace(']', '')
+				if not k is '':
+					k = int(k)
+				k_list.append(k)
+			check_list.append(k_list)
+	results_dict = dict()
+	for i in range(len(text_from_user)):
+		resent_results = []
+		for n in range (texts[text_from_user_list[i]-1][2]-1):
+			if n in check_list[i]:
+				resent_results.append(1)
+			else:
+				resent_results.append(0)
+		results = [session_list[i], resent_results]
+		results_dict.setdefault(text_from_user_list[i], []).append(results)
+	#print(results_dict)
+	#print(list(results_dict.keys()))
+	texts_lists_table = []
+	length = 0
+	for item in list(results_dict.keys()):
+		text_lists_table = []
+		for j in range(texts[item-1][2]-1):
+			text_lists_table.append(str(texts[item-1][1].replace('.mp3', '_'))+str(j))
+			length += 1
+		texts_lists_table.append(text_lists_table)
+	#print(len(list(results_dict.values())[0]))
+	length_dict = []
+	max_length = len(list(results_dict.values())[0])
+	#print(texts_lists_table)
+	table = [[0 for i in range(max_length+1)] for n in range(length+1)]
+	for n in range(1, max_length+1):
+		table[0][n] = list(results_dict.values())[0][n-1][0]
+	i = 1
+	for j in range(len(texts_lists_table)):
+		for k in range(len(texts_lists_table[j])):
+			table[i][0]=texts_lists_table[j][k] 
+			i += 1
+	#print(list(results_dict.values())[0][0][1])
+	return render(request, 'experiment/results.html', {'o': table})

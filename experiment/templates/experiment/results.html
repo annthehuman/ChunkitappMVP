@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+
+<html lang="fi">
+
+
+{% extends 'experiment/base.html' %}
+
+
+{% block content %}
+<section>
+	{%  for i in o %}
+    <p>{{ i }}</p>
+	{% endfor %}
+</section>
+{% endblock %}
