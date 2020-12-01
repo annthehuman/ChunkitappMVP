@@ -40,9 +40,7 @@ var tds= document.getElementsByTagName('td');
 var l = {{ length }};
 var w = {{ width }}
 for (var i = 0, len = l*w; i < len; i=i+w) {
-	console.log(tds[i].innerHTML)
     if (tds[i].innerHTML.indexOf(", 0)") > -1) {
-    	console.log(tds[i].innerHTML)
     	document.getElementsByTagName("tr")[i/w].style.backgroundColor = 'lightblue';
     }
     //do somthing
