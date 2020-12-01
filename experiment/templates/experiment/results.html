@@ -5,11 +5,48 @@
 
 {% extends 'experiment/base.html' %}
 
-
 {% block content %}
+
+<style type="text/css">
+	table {
+	  }
+	 table td {
+	 	border: 1px solid skyblue;
+	 	border-collapse: collapse;
+	 	text-align: center;
+	 }
+	 table tbody tr td:nth-child(2n) {
+	 	background-color:#e9ecf6;
+	 }
+
+</style>
+
 <section>
+	<table>
 	{%  for i in o %}
-    <p>{{ i }}</p>
+	<tr>
+	{% for j in i %}
+	<td>
+    {{ j }}
+    </td>
+    {% endfor %}
+    </tr>
 	{% endfor %}
+</table>
 </section>
+
+<script type="text/javascript">
+var tds= document.getElementsByTagName('td');
+var l = {{ length }};
+var w = {{ width }}
+for (var i = 0, len = l*w; i < len; i=i+w) {
+	console.log(tds[i].innerHTML)
+    if (tds[i].innerHTML.indexOf(", 0)") > -1) {
+    	console.log(tds[i].innerHTML)
+    	document.getElementsByTagName("tr")[i/w].style.backgroundColor = 'lightblue';
+    }
+    //do somthing
+}
+
+</script>
 {% endblock %}

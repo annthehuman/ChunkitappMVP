@@ -7,6 +7,7 @@ from .forms import backgroundForm, feedbackForm
 import uuid
 import random
 from django.contrib.sessions.models import Session
+from operator import itemgetter
 
 
 def introduction(request):
@@ -188,7 +189,8 @@ def results(request):
 	for item in list(results_dict.keys()):
 		text_lists_table = []
 		for j in range(texts[item-1][2]-1):
-			text_lists_table.append(str(texts[item-1][1].replace('.mp3', '_'))+str(j))
+			t = item, str(texts[item-1][1].replace('.mp3', '')), j
+			text_lists_table.append(t)
 			length += 1
 		texts_lists_table.append(text_lists_table)
 	#print(len(list(results_dict.values())[0]))
@@ -196,12 +198,25 @@ def results(request):
 	max_length = len(list(results_dict.values())[0])
 	#print(texts_lists_table)
 	table = [[0 for i in range(max_length+1)] for n in range(length+1)]
+	table[0][0] = ()
 	for n in range(1, max_length+1):
 		table[0][n] = list(results_dict.values())[0][n-1][0]
 	i = 1
 	for j in range(len(texts_lists_table)):
 		for k in range(len(texts_lists_table[j])):
 			table[i][0]=texts_lists_table[j][k] 
+			for n in range(1, max_length+1):
+				for res in range(len(list(results_dict.values())[j])):
+					#print(table[0][n], list(results_dict.values())[j][res][0])
+					if table[0][n] == list(results_dict.values())[j][res][0]:
+						table[i][n] = list(results_dict.values())[j][res][1][k]
 			i += 1
+	table = sorted(table, key=lambda x: x[0])
+	table[0][0] = ''
+	for n in range(1, max_length+1):
+		table[0][n] = table[0][n][:5]
+	l = (length+1)
+	w = (max_length+1)
+	#print(table)
 	#print(list(results_dict.values())[0][0][1])
-	return render(request, 'experiment/results.html', {'o': table})
+	return render(request, 'experiment/results.html', {'o': table, 'length': l, 'width': w})
