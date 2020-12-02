@@ -104,16 +104,16 @@ def trainingcompleted(request):
 			order = [i for i in range(4,44)]
 			random.shuffle(order)
 			request.session['order'] = order
-			return redirect('get_challange')	
+			return redirect('get_challenge')	
 	return render(request, 'experiment/trainingcompleted.html', {})
 
 def confirm(request):
-    return render(request, 'experiment/challange.html', {'order': request.session['order']})
+    return render(request, 'experiment/challenge.html', {'order': request.session['order']})
 
 
-def challange(request):
+def challenge(request):
 	#print(request.session)
-	return render(request, 'experiment/challange.html', {})
+	return render(request, 'experiment/challenge.html', {})
 
 def thanks(request):
     return render(request, 'experiment/thanks.html', {})
