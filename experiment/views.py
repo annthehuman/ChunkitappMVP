@@ -128,6 +128,7 @@ def feedback(request):
 			newanswer = form.save(commit=False)
 			newanswer.session_key = request.session.session_key
 			newanswer.save()
+			return redirect('end')
 	return render(request, 'experiment/feedback.html', {'form': form})
 
 def end(request):
@@ -151,9 +152,12 @@ def results(request):
 	text_from_user = test.objects.all().values_list('index')
 	question = test.objects.all().values_list('question')
 	session_list = []
+	session_dict = {}
 	for i in session:
 		for n in i:
 			session_list.append(n)
+			session_dict.setdefault(n)
+	#print(len(session_dict))
 	question_list = []
 	for i in question:
 		for n in i:
@@ -168,12 +172,12 @@ def results(request):
 			k_list = []
 			for k in n.split(','):
 				k = k.replace("'", "").replace('[', '').replace(']', '')
-				if not k is '':
+				if k !=  '':
 					k = int(k)
 				k_list.append(k)
 			check_list.append(k_list)
 	results_dict = dict()
-	for i in range(len(text_from_user)):
+	for i in range(len(text_from_user_list)):
 		resent_results = []
 		for n in range (texts[text_from_user_list[i]-1][2]-1):
 			if n in check_list[i]:
@@ -182,6 +186,7 @@ def results(request):
 				resent_results.append(0)
 		results = [session_list[i], resent_results]
 		results_dict.setdefault(text_from_user_list[i], []).append(results)
+		#print([text_from_user_list[i]-1], results)
 	#print(results_dict)
 	#print(list(results_dict.keys()))
 	texts_lists_table = []
@@ -195,12 +200,15 @@ def results(request):
 		texts_lists_table.append(text_lists_table)
 	#print(len(list(results_dict.values())[0]))
 	length_dict = []
-	max_length = len(list(results_dict.values())[0])
+	max_length = len(session_dict)
 	#print(texts_lists_table)
 	table = [[0 for i in range(max_length+1)] for n in range(length+1)]
+	#print(list(results_dict.values())[0])
 	table[0][0] = ()
+	#print(list(session_dict.keys())[2])
 	for n in range(1, max_length+1):
-		table[0][n] = list(results_dict.values())[0][n-1][0]
+		table[0][n] = list(session_dict.keys())[n-1]
+	#print(results_dict)
 	i = 1
 	for j in range(len(texts_lists_table)):
 		for k in range(len(texts_lists_table[j])):
@@ -218,5 +226,6 @@ def results(request):
 	l = (length+1)
 	w = (max_length+1)
 	#print(table)
+	#print(results_dict)
 	#print(list(results_dict.values())[0][0][1])
 	return render(request, 'experiment/results.html', {'o': table, 'length': l, 'width': w})
