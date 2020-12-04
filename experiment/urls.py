@@ -16,10 +16,13 @@ urlpatterns = [
     path('data/', views.data),
     path('get_challenge', views.confirm, name='get_challenge'),
     path('taskcompleted', views.taskcompleted, name='taskcompleted'),
-    path('feedback', views.feedback, name='feedback'),
+    path('feedback', views.feedbackQ, name='feedback'),
     path('end', views.end, name='end'),
     path('passed', views.you_passed, name='passed'),
-    path('results', views.results, name='results')
+    path('results', views.results, name='results'),
+    path('questions', views.questions, name='questions'),
+    path('backgroung_results', views.backgroundRES, name='background_results'),
+    path('feedback_results', views.feedbackRES, name='feedback_results'),
 ]
 
 

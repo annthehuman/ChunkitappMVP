@@ -29,9 +29,9 @@
 </style>
 
 <section>
- <a class='save' href='{% static 'out.csv' %}' download>Save Table</a>
+<a class='save' href='{% static 'questions.csv' %}' download>Save Table</a>
 	<table>
-	{%  for i in o %}
+	{%  for i in question %}
 	<tr>
 	{% for j in i %}
 	<td>
@@ -42,17 +42,4 @@
 	{% endfor %}
 </table>
 </section>
-
-<script type="text/javascript">
-var tds= document.getElementsByTagName('td');
-var l = {{ length }};
-var w = {{ width }}
-for (var i = 0, len = l*w; i < len; i=i+w) {
-    if (tds[i].innerHTML.indexOf(", 1)") > -1) {
-    	document.getElementsByTagName("tr")[i/w].style.backgroundColor = 'lightblue';
-    }
-    //do somthing
-}
-
-</script>
 {% endblock %}

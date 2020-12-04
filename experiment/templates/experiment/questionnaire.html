@@ -14,38 +14,40 @@
 	<h2>Perustiedot</h2>
 	<form method="post"  class="questions-form" autocomplete="off">{% csrf_token %}
 		<ul>
-			<li><label>Ikä
-			<div class='control-label'>{{ form.age }}</div></label></li>
-			<li><label>Sukupuoli
-			<div class='control-label'>{{ form.sex }}</div></label></li>
-			<li><label>Kätisyys
-			<div class='control-label'>{{ form.hand }}</div></label></li>			
-			<li><label>Nykyinen asuinpaikka
-			<div class='control-label'>{{ form.place }}</div></label></li>
-			<li><label>Äidinkieli
-			<div class='control-label'>{{ form.language }}</div></label></li>
-			<li><label>Muut osaamasi kielet
-			<div>{{ form.other_languages }}</div></label></li>
-			<li><label>Mitä kieliä käytät säännlisesti arjessa?
-			<div class='control-label'>{{ form.use_language }}</div></label></li>
+			<li><label><div class='control-label'>Ikä</div>
+			{{ form.age }}</label></li>
+			<li><label><div class='control-label'>Sukupuoli</div>
+			{{ form.sex }}</label></li>
+			<li><label><div class='control-label'>Kätisyys
+			</div>{{ form.hand }}</label></li>			
+			<li><label><div class='control-label'>Nykyinen asuinpaikka
+			</div>{{ form.place }}</label></li>
+			<li><label><div class='control-label'>Äidinkieli
+			</div>{{ form.language }}</label></li>
+			<li><label><div>Muut osaamasi kielet</div>
+			{{ form.other_languages }}</label></li>
+			<li><label><div class='control-label'>Mitä kieliä käytät säännlisesti arjessa?
+			</div>{{ form.used_language }}</label></li>
 		</ul>
 	<h2>Koulutus</h2>
 	<ul class='education'>
-		<li><label>Korkein suorittamasti tutkinto
-		<div class='control-label'>{{ form.education }}</div></label></li>
-		<li><label>Pääaine / ala
-		<div class='control-label'>{{ form.major }}</div></label></li>
-		<li><label>Jos olet opiskelija, mitä tutkintoa olet suorittamassa tällä hetkellä?
-		<div class='control-label'>{{ form.degree }}</div></label></li>
+		<li><label><div class='control-label'>Korkein suorittamasti tutkinto
+		</div>{{ form.education }}</label></li>
+		<li><label><div class='control-label'>Pääaine / ala
+		</div>{{ form.major }}</label></li>
+		<li><label><div>Jos olet opiskelija, mitä tutkintoa olet suorittamassa tällä hetkellä?</div>
+		{{ form.degree }}</label></li>
 	</ul>
 	<h2>Terveystiedot</h2>
-		<li><label>Onko sinulla diagnosoitu lukihäirio?
+	<ul class = 'withradio'>
+		<li><label><div class='control-label'>Onko sinulla diagnosoitu lukihäirio?</div>
 		<div class='radio'>{{ form.dyslexia }}</div></label></li>
-		<li><label>Onko sinulla todettu kuulonalenema tai muita kuulemiseen liittyviä ongelmia?
+		<li><label><div class='control-label'>Onko sinulla todettu kuulonalenema tai muita kuulemiseen liittyviä ongelmia?</div>
 		<div class='radio'>{{ form.hearing }}</div></label></li>
+	</ul>
 	<h2>Muuta</h2>
 	<ul>
-		<li><label>Kommentteja ja muita tietoja, jotka voivat olla tutkimuksen kannalta olennaisia: <br>
+		<li><label><div>Kommentteja ja muita tietoja, jotka voivat olla tutkimuksen kannalta olennaisia:</div>
 		{{ form.comments }}</label></li>
 	</ul>
 	<button type="submit" class='submitquestionnaire'>L&auml;het&auml;</button>

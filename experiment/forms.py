@@ -7,9 +7,10 @@ class checkboxfield(forms.Form):
 
 class backgroundForm(forms.ModelForm):
 	yes_no = (
-		('YES', 'Kyllä'),
-		('NO', 'Ei'),
+		('Yes', 'Kyllä'),
+		('No', 'Ei'),
 		)
+	degree = forms.CharField(required=False)
 	other_languages = forms.CharField(required=False)
 	comments = forms.CharField(widget=forms.Textarea, required=False)
 	dyslexia = forms.CharField(widget=forms.RadioSelect(choices=yes_no))
@@ -18,7 +19,7 @@ class backgroundForm(forms.ModelForm):
 	class Meta:
 		model = background
 		fields = ('age', 'sex', 'hand', 'place', 'language', 'other_languages',\
-		 'use_language', 'education', 'major', 'degree', 'dyslexia', 'hearing', 'comments',)
+		 'used_language', 'education', 'major', 'degree', 'dyslexia', 'hearing', 'comments',)
 
 class feedbackForm(forms.ModelForm):
 	instructions = forms.CharField(widget=forms.RadioSelect(choices=feedback.opinion_choices))

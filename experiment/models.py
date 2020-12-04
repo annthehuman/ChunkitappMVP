@@ -5,33 +5,33 @@ from django.core.validators import MinValueValidator, MaxValueValidator
 from django.contrib.sessions.models import Session
 
 class background(models.Model):
-	man = 'MAN'
-	woman = 'WOMAN'
-	other = 'OTHER'
+	man = 'Man'
+	woman = 'Woman'
+	other = 'Other'
 	gender_choices = (
 		(man, 'Mies'),
 		(woman, 'Nainen'),
 		(other, 'Muu'),
 		)
-	right = 'RIGHT'
-	left = 'LEFT'
-	both = 'BOTH'
+	right = 'Rigth'
+	left = 'Left'
+	both = 'Both'
 	hands_choices = (
 		(right, 'Oikeakätinen'),
 		(left, 'Vasenkätinen'),
 		(both, 'Ambidekstri / molempikätinen'),
 		)
-	primary = 'PRIMARY'
-	basic = 'BASIC'
-	mature = 'MATURE'
-	othersec = 'OTHERSECONDARY'
-	bachelor = 'BACHELOR'
-	candidate = 'CANDIDATE'
-	master = 'MASTER'
-	diploma = 'DIPLOMA'
+	primary = 'Primary'
+	basic = 'Basic'
+	mature = 'Mature'
+	othersec = 'OtherSecondary'
+	bachelor = 'Bachelor'
+	candidate = 'Candidate'
+	master = 'Master'
+	diploma = 'Diploma'
 	di = 'DI'
-	doctor = 'DOCTOR'
-	polytech = 'POLYTECH'
+	doctor = 'Doctor'
+	polytech = 'Polytech'
 	education_choices = (
 		(primary, 'Peruskoulu'),
 		(mature, 'Ylioppilastutkinto '),
@@ -52,8 +52,8 @@ class background(models.Model):
 		(di, 'DI'),
 		(doctor, 'Tohtorin tutkinto'),
 		)
-	yes = 'YES'
-	no = 'NO'
+	yes = 'Yes'
+	no = 'No'
 	yes_no = (
 		(yes, 'Kyllä'),
 		(no, 'Ei'),
@@ -65,7 +65,7 @@ class background(models.Model):
 	place = models.CharField(max_length=1000, default="nowhere")
 	language = models.CharField(max_length=1000, default="none")
 	other_languages = models.CharField(max_length=1000, default="no")
-	use_language = models.CharField(max_length=1000, default="neither")
+	used_language = models.CharField(max_length=1000, default="neither")
 	education = models.CharField(max_length=14, choices=education_choices)
 	major = models.CharField(max_length=1000, default="none")
 	degree = models.CharField(max_length=14, choices=degree_choices)
@@ -76,7 +76,7 @@ class background(models.Model):
 class feedback(models.Model):
 	str_disagree = 'StrongleDisagree'
 	disagree = 'Disagree'
-	neither = 'NietherAgreeDisagree'
+	neither = 'NietherAgreeNorDisagree'
 	agree = 'Agree'
 	str_agree = 'StrongleAgree'
 	opinion_choices = (
@@ -135,3 +135,4 @@ class sessions(models.Model):
 	session_id = models.CharField(max_length=40)
 	session_key = models.TextField(default='nothing')
 	ip = models.CharField(max_length=400)
+	published_date = models.DateTimeField(blank=True, null=True)

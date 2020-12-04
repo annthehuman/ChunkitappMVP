@@ -1,0 +1,43 @@
+1 Ovatko puhujan mielestä päivät yleensä samanlaisia? 
+2 Murtautuiko mies palatsiin vain kerran? 
+3 Onko puhuja koulutukseltaan kenkäsuunnittelja? 
+4 Voiko puhujan mainitsema ilmiö näyttäytyä oudolta sosiaalisille verkostoille? 
+5 Onko levy tehty demojen pohjalta? 
+6 Vaikuttaako järvien jääpeiteaika järven lajistoon? 
+7 Pitikö tentissä tehdä kaksi tehtävää? 
+8 Vaikuttiko artikkeli puhujan mielestä tylsältä? 
+9 Haluaisiko puhuja lähteä matkalle? 
+10 Pitääkö puhuja omasta äänestään? 
+11 Kokeeko puhuja sosiaalisen median lisäävän läsnäolon painetta? 
+12 Aikooko puhuja mennä mökille? 
+13 Onko ryyppääminen puhujan mielestä sitä hauskempaa, mitä useammin sitä tekee? 
+14 Huomattiinko aivoissa muutosta? 
+15 Oliko puhuja ylpeä Euroviisuissa olosta? 
+16 Pitääkö puhuja normikriittisyyttä tärkeänä? 
+17 Tarvitseeko puhujan mielestä olla musikaalisesti lahjakas? 
+18 Eroavatko sosiaalinen media ja kirjat toisistaan? 
+19 Onko tekoäly alana laaja? 
+20 Olivatko demokraatit ja republikaanit jossain vaiheessa molemmat ympäristömyönteisiä? 
+21 Kannattaako puhuja uskontodialogia? 
+22 Pitääkö puhuja vuorokausirytmin tutkimista hyödyllisenä? 
+23 Pitääkö puhuja lasten kanssa pelaamista turhana? 
+24 Kävikö puhuja hautausmaalla? 
+25 Tapahtuiko suunnistus Helsingissä? 
+26 Pelaako joukkue futsalia sisällä? 
+27 Juoko puhuja vaaleaa glögiä? 
+28 Tarvitseeko puhujan mukaan kitaraa opetellessa osata nuotteja? 
+29 Pitääkö puhujan perhe eläimistä? 
+30 Liikkuuko puhuja joka päivä yhtä paljon? 
+31 Huolehtiiko teknikko näyttelijöiden mikrofoneista? 
+32 Onko kuulonalenema yleinen vain muusikoilla? 
+33 Onko puhujan mukaan öljy- ja vesivärien maalaustekniikka samanlainen? 
+34 Pitäisikö puhujan mielestä hampaat pestä aamulla? 
+35 Ovatko ikäluokat erikokoisia? 
+36 Onko henkilö puhunut ystävien kanssa kasvotusten? 
+37 Pitikö henkilön kaveri kirjasta? 
+38 Uskooko henkilö että elämä voi olla hyvää vaikka rahaa ei olisikaan paljoa? 
+39 Käyttääkö henkilö kuulokojetta päivittäin? 
+40 Haluaako lapsi itse treenata? 
+41 Nolottaako lukihäiriö puhujaa? 
+42 Onko henkilö avannut sisäisiä lukkoja? 
+43 Saavatko nuoret ajaa jatkuvasti toria ympäri? 

@@ -8,7 +8,10 @@ import uuid
 import random
 from django.contrib.sessions.models import Session
 from operator import itemgetter
-
+import csv
+import os
+from django.utils import timezone
+import datetime
 
 def introduction(request):
 	return render(request, 'experiment/introduction.html', {})
@@ -45,11 +48,14 @@ def consent(request):
 			#print(request.session[x])
 			request.session.save()
 			session = request.session.session_key
+			publish_date = datetime.datetime.now()
+			#print(publish_date)
 			#print(request.session.session_key)
 			sessions.objects.create(
 				session_id = request.session[x],
 				session_key = session,
-				ip = ip
+				ip = ip,
+				published_date = publish_date
 				)
 			#print(request.session[x])
 			return redirect('questionnaire')
@@ -121,7 +127,7 @@ def thanks(request):
 def taskcompleted(request):
 	return render(request, 'experiment/taskcompleted.html', {})
 
-def feedback(request):
+def feedbackQ(request):
 	form = feedbackForm(request.POST)
 	if request.method == 'POST':
 		if form.is_valid():
@@ -146,22 +152,25 @@ def results(request):
 		texts[ii][1] = n[1]
 		texts[ii][2] = int(n[2])
 		ii += 1
+	#sprint(texts)
 	f_texts.close()
 	checkboxes = list(test.objects.all().values_list('checkbox'))
 	session = test.objects.all().values_list('session_key')
 	text_from_user = test.objects.all().values_list('index')
-	question = test.objects.all().values_list('question')
+	session_time = list(sessions.objects.all().values_list('published_date'))
+	session_key_time = list(sessions.objects.all().values_list('session_key'))
 	session_list = []
 	session_dict = {}
+	time = []
+	for i in range(len(session_key_time)):
+		t = [session_time[i][0], session_key_time[i][0]]
+		time.append(t)
+	#print(time, session_time[i][0])
 	for i in session:
 		for n in i:
 			session_list.append(n)
 			session_dict.setdefault(n)
 	#print(len(session_dict))
-	question_list = []
-	for i in question:
-		for n in i:
-			question_list.append(n)
 	text_from_user_list = []
 	for i in text_from_user:
 		for n in i:
@@ -194,7 +203,7 @@ def results(request):
 	for item in list(results_dict.keys()):
 		text_lists_table = []
 		for j in range(texts[item-1][2]-1):
-			t = item, str(texts[item-1][1].replace('.mp3', '')), j
+			t = item, str(texts[item-1][1].replace('.mp3', '')), j+1
 			text_lists_table.append(t)
 			length += 1
 		texts_lists_table.append(text_lists_table)
@@ -202,14 +211,21 @@ def results(request):
 	length_dict = []
 	max_length = len(session_dict)
 	#print(texts_lists_table)
-	table = [[0 for i in range(max_length+1)] for n in range(length+1)]
+	table = [[0 for i in range(max_length+1)] for n in range(length+2)]
 	#print(list(results_dict.values())[0])
 	table[0][0] = ()
+	table[1][0] = ()
 	#print(list(session_dict.keys())[2])
 	for n in range(1, max_length+1):
 		table[0][n] = list(session_dict.keys())[n-1]
+	for n in range(1, max_length+1):
+		for i in range(len(time)):
+			if time[i][1] == table[0][n] and type(time[i][0]) != type(None):
+				#print(type(time[i][0]), 1)
+				table[1][n] = time[i][0].strftime("%m-%d-%Y\n%H:%M:%S") 
+	#print(type((time[1][0])) == type(None))
 	#print(results_dict)
-	i = 1
+	i = 2
 	for j in range(len(texts_lists_table)):
 		for k in range(len(texts_lists_table[j])):
 			table[i][0]=texts_lists_table[j][k] 
@@ -221,11 +237,105 @@ def results(request):
 			i += 1
 	table = sorted(table, key=lambda x: x[0])
 	table[0][0] = ''
+	table[1][0] = ''
 	for n in range(1, max_length+1):
 		table[0][n] = table[0][n][:5]
 	l = (length+1)
 	w = (max_length+1)
+	with open(os.path.join('experiment/static/', 'out.csv'), 'w', newline='') as of:
+		wRt = csv.writer(of)
+		wRt.writerows(table)
 	#print(table)
 	#print(results_dict)
 	#print(list(results_dict.values())[0][0][1])
 	return render(request, 'experiment/results.html', {'o': table, 'length': l, 'width': w})
+
+
+def questions(request):
+	question = test.objects.all().values_list('question')
+	session = test.objects.all().values_list('session_key')
+	text_from_user = test.objects.all().values_list('index')
+	quests = [[0 for i in range(2)] for j in range(43)]
+	question_list = []
+	for i in question:
+		for n in i:
+			question_list.append(n)
+	session_list = []
+	session_dict = {}
+	for i in session:
+		for n in i:
+			session_list.append(n)
+			session_dict.setdefault(n)
+	text_from_user_list = []
+	for i in text_from_user:
+		for n in i:
+			text_from_user_list.append(n)
+	ii = 0
+	with open('quest.txt', 'r') as questions:
+		for line in questions:
+			line = line.split() 
+			quests[ii][0] = line[0]
+			quests[ii][1] = ' '.join(line[1:])
+			ii += 1
+	question_table = [[0 for i in range(len(session_dict)+1)] for j in range(44)]
+	for i in range(1, len(session_dict)+1):
+		question_table[0][i] = list(session_dict.keys())[i-1]
+	for i in range(1, 44):
+		question_table[i][0] = quests[i-1]
+	for i in range(len(session_list)):
+		for j in range(len(session_dict)+1):
+			if session_list[i] == question_table[0][j]:
+				#print(session_list[i])
+				for k in range(1,len(question_table)):
+					#print(question_table[k][j])
+					if int(question_table[k][0][0]) == int(text_from_user_list[i]):
+						question_table[k][j] = question_list[i]
+	for n in range(1, len(session_dict)+1):
+		question_table[0][n] = question_table[0][n][:5]
+
+	import re
+	question_table[0][0] =''
+	for n in range(1, len(question_table)):
+		question_table[n][0] = re.sub(r"[\[\]']", '', str(question_table[n][0]))
+	with open(os.path.join('experiment/static/', 'questions.csv'), 'w', newline='') as of:
+		wRt = csv.writer(of)
+		wRt.writerows(question_table)
+	return render(request, 'experiment/questions.html', {'question' : question_table})
+
+def backgroundRES(request):
+	table = background.objects.all().values()
+	table_list = []
+	#table.append()
+	for tab in table:
+		table_list.append(list(tab.values()))
+	tab_keys = list(tab.keys())
+	background_table = [[0 for i in range(len(tab_keys))] for j in range(len(table_list)+1)]
+	for n in range(len(tab_keys)):
+		background_table[0][n] = tab_keys[n]
+		for k in range(1, len(table_list)+1):
+			background_table[k][n] = table_list[k-1][n]
+	for k in range(1, len(table_list)+1):
+		background_table[k][1] = background_table[k][1][:5]
+	with open(os.path.join('experiment/static/', 'background.csv'), 'w', newline='') as of:
+		wRt = csv.writer(of)
+		wRt.writerows(background_table)	
+	return render(request, 'experiment/background_results.html', {'table': background_table})
+
+def feedbackRES(request):
+	table = feedback.objects.all().values()
+	table_list = []
+	#table.append()
+	for tab in table:
+		table_list.append(list(tab.values()))
+	tab_keys = list(tab.keys())
+	feedback_table = [[0 for i in range(len(tab_keys))] for j in range(len(table_list)+1)]
+	for n in range(len(tab_keys)):
+		feedback_table[0][n] = tab_keys[n]
+		for k in range(1, len(table_list)+1):
+			feedback_table[k][n] = table_list[k-1][n]
+	for k in range(1, len(table_list)+1):
+		feedback_table[k][1] = feedback_table[k][1][:5]
+	with open(os.path.join('experiment/static/', 'feedback.csv'), 'w', newline='') as of:
+		wRt = csv.writer(of)
+		wRt.writerows(feedback_table)	
+	return render(request, 'experiment/feedback_results.html', {'table': feedback_table})

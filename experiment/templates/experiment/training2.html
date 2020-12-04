@@ -78,15 +78,6 @@
 </div>
 
 
-<div id="popup" style="display: none;">
-    <div id="okno">
-        <p class='paragraph'>Onko puhuja harrastanut roolipelejä? </p>
-        <a href='{% url 'training3' %}'>Kyllä</a>
-        <a href='{% url 'training3' %}'>Ei</a>
-        </form>
-    </div>
-</div>
-
 <script type="text/javascript">
     function displaytext() {
         document.getElementById('instructions_2').style.display = 'none';
@@ -115,6 +106,9 @@
         document.getElementById("practice_1").style.display = "none";
     };
 
+    myAudio.onended=function () {
+        window.location.href = '{% url 'training3' %}';
+    };
 
 
     function handler(lnk_obj){

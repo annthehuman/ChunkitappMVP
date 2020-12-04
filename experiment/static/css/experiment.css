@@ -27,15 +27,20 @@ a {
 	color: black;
 }
 
+a:active {
+	border: 2px solid black;
+	border-radius: 5px;
+}
 
 input[type=submit] {
 	border: 2px solid #b4b4b4;
 	padding: 5px 20px 5px 20px;
-	margin: 10px 0 10px 0;
+	margin: 25px 0 10px 0;
 	color: black;
 	background-color: white;
 	height: 35px;
 	font-size: 20px;
+	cursor: pointer;
 }
 
 button[type=submit] {
@@ -68,11 +73,24 @@ li {
 	list-style: none;
 }
 
+.questionnaire div {
+	margin-left: 9px;
+}
+
 .questionnaire h2 {
 	margin-bottom: 10px;
 }
 
-.questionnaire input, select, textarea {
+.feedback h2 {
+	margin-bottom: 0px;
+}
+
+.feedback p {
+	margin-top: 10px;
+	margin-bottom: 20px; 
+}
+
+.questionnaire input, .questionnaire select, .questionnaire textarea, .feedback textarea {
 	border: 2px solid #b4b4b4;
 	background-color: white;
 	margin: 8px;
@@ -96,7 +114,7 @@ li {
 	width: 600px;
 }
 
-.questionnaire input[type=radio] {
+.questionnaire input[type=radio], .feedback input[type=radio] {
 	width: 15px;
 	height: 15px;
 	margin: 0px;
@@ -109,8 +127,21 @@ li {
 	width: 592px;
 }
 
-.questionnaire label {
-	padding-left: 9px;
+.questions-form+ul {
+	margin: 10px;
+}
+
+.feedback div {
+	margin-left: 9px;
+}
+
+.feedback label div:nth-child(1) {
+	margin-left: 0px;
+}
+
+.parent > li {
+	margin-top: 20px;
+	margin-bottom: 20px;
 }
 
 .paragraph {
@@ -180,7 +211,7 @@ input:checked  + label > :last-child {
 }
 
 
-.okno p {
+.okno{
 	margin-bottom: 25px;
 	line-height: 30px;
 }

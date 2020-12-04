@@ -26,12 +26,17 @@
 	 	width: 100px;
 	 }
 
+	.feedback {
+		display: block;
+		padding-left: 10px;
+	}
+
 </style>
 
-<section>
- <a class='save' href='{% static 'out.csv' %}' download>Save Table</a>
+<section class='feedback'>
+<a class='save' href='{% static 'feedback.csv' %}' download>Save Table</a>
 	<table>
-	{%  for i in o %}
+	{%  for i in table %}
 	<tr>
 	{% for j in i %}
 	<td>
@@ -42,17 +47,4 @@
 	{% endfor %}
 </table>
 </section>
-
-<script type="text/javascript">
-var tds= document.getElementsByTagName('td');
-var l = {{ length }};
-var w = {{ width }}
-for (var i = 0, len = l*w; i < len; i=i+w) {
-    if (tds[i].innerHTML.indexOf(", 1)") > -1) {
-    	document.getElementsByTagName("tr")[i/w].style.backgroundColor = 'lightblue';
-    }
-    //do somthing
-}
-
-</script>
 {% endblock %}
