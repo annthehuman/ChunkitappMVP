@@ -93,9 +93,11 @@ li {
 .questionnaire input, .questionnaire select, .questionnaire textarea, .feedback textarea {
 	border: 2px solid #b4b4b4;
 	background-color: white;
-	margin: 8px;
+	margin: 9px;
 	font-size: 20px;
 }
+
+
 
 .questionnaire input {
 	height: 35px;
