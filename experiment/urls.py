@@ -21,7 +21,7 @@ urlpatterns = [
     path('passed', views.you_passed, name='passed'),
     path('results', views.results, name='results'),
     path('questions', views.questions, name='questions'),
-    path('backgroung_results', views.backgroundRES, name='background_results'),
+    path('background_results', views.backgroundRES, name='background_results'),
     path('feedback_results', views.feedbackRES, name='feedback_results'),
 ]
 
