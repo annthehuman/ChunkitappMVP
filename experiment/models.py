@@ -74,11 +74,11 @@ class background(models.Model):
 	comments = models.TextField(default='nothing')
 
 class feedback(models.Model):
-	str_disagree = 'StrongleDisagree'
+	str_disagree = 'StronglyDisagree'
 	disagree = 'Disagree'
 	neither = 'NietherAgreeNorDisagree'
 	agree = 'Agree'
-	str_agree = 'StrongleAgree'
+	str_agree = 'StronglyAgree'
 	opinion_choices = (
 		(str_disagree, 'Vahvasti eri mieltä'),
 		(disagree, 'Eri mieltä'),
