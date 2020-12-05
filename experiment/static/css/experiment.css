@@ -108,7 +108,7 @@ li {
 	height: 42px;
 }
 
-.questionnaire select[name=hand] {
+.questionnaire select[name=katisyys] {
 	width: 600px;
 }
 
@@ -121,7 +121,7 @@ li {
 	height: 15px;
 	margin: 0px;
 }
-.questionnaire #id_age {
+.questionnaire #id_ika {
 	width: 80px;
 }
 

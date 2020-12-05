@@ -1,3 +1,5 @@
-id,session_key,instructions,doing,simple,demanding,pressure,fun,reflects,performance,understanding,task,strategy,criteria,impression,comments
-1,p9c5v,Disagree,NietherAgreeDisagree,NietherAgreeDisagree,NietherAgreeDisagree,Agree,NietherAgreeDisagree,Disagree,Good,VeryLittleTime,,,,,
-2,zmsl6,StrongleDisagree,Disagree,Agree,NietherAgreeNorDisagree,Agree,NietherAgreeNorDisagree,NietherAgreeNorDisagree,VGood,VeryLittleTime,raz,dva,tri,chetire,pyat
+id,session_key,ohjeet,mita_tein,yksinkertainen,vaativa,paineita,hauskaa,heijastaa,suoritustasi,ymmarsin,osa_tehtava,strategian,kriteereita,vaikutelman,kommentteja
+1,p9c5v,0,0,0,0,0,0,0,0,0,,,,,
+2,zmsl6,0,0,0,0,0,0,0,0,0,chetire,dva,tri,raz,pyat
+3,w6cwb,VahvastiSamaaMielta,EriMielta,EiSamaaEikaEriMielta,SamaaMielta,VahvastiSamaaMielta,VahvastiSamaaMielta,EriMielta,Hyva,HyvinVahanAjasta,x,x,x,x,x
+4,2eas7,VahvastiSamaaMielta,EriMielta,EiSamaaEikaEriMielta,SamaaMielta,VahvastiSamaaMielta,VahvastiSamaaMielta,EriMielta,Huono,HyvinVahanAjasta,x,x,x,x,x

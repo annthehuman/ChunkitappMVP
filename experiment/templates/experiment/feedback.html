@@ -13,42 +13,42 @@
 <form method="post"  class="questions-form" autocomplete="off">{% csrf_token %}
 		<ul class='parent'>
 			<li><label><div class='control-label'>Tehtävän ohjeet olivat selvät.</div>
-			<div>{{ form.instructions }}</label></li>
+			<div>{{ form.ohjeet }}</label></li>
 			<li><label><div class='control-label'>Tiesin mitä tein.</div>
-				<div>{{ form.doing }}</div></label></li>
+				<div>{{ form.mita_tein }}</div></label></li>
 			<li><label><div class='control-label'>Tehtävä oli melko yksinkertainen.</div>
-				<div>{{ form.simple }}</div></label></li>			
+				<div>{{ form.yksinkertainen }}</div></label></li>			
 			<li><label><div class='control-label'>Tehtävä oli hyvin vaativa. Olen väsynyt.</div>
-				<div>{{ form.demanding }}</div></label></li>
+				<div>{{ form.vaativa }}</div></label></li>
 			<li><label><div class='control-label'>Tehtävä aiheutti minulle kovia paineita. </div>
-				<div>{{ form.pressure }}</div></label></li>
+				<div>{{ form.paineita }}</div></label></li>
 			<li><label><div class='control-label'>Tehtävä oli hauska.</div>
-				<div>{{ form.fun }}</div></label></li>
+				<div>{{ form.hauskaa }}</div></label></li>
 			<li><label><div class='control-label'>Mielestäni tehtävä heijastaa jollain tapaa sitä, mitä teen puhetta kuunnellessani.</div>
-				<div>{{ form.reflects }}</div></label></li>
+				<div>{{ form.heijastaa }}</div></label></li>
 		</ul>
 	<h2>Suoritusarvio</h2>
 		<ul class = 'parent'>
 			<li><label><div class='control-label'>Kuinka arvioisit suoritustasi tehtävässä?</div>
-				<div>{{ form.performance }}</div></label></li>
+				<div>{{ form.suoritustasi }}</div></label></li>
 		</ul>
 	<h2>Ymmärrys</h2>
 		<ul class = 'parent'>
 			<li><label><div class='control-label'>Ymmärsin, mitä puhuja sanoi…</div>
-				<div>{{ form.understanding }}</div></label></li>
+				<div>{{ form.ymmarsin }}</div></label></li>
 		</ul>
 	<h2>Muuta</h2>
 	    <ul  class = 'parent'>
 			<li><label><div>Voitteko arvata, mitä osa-tehtävä mitattiin?</div>
-			{{ form.task }}</label></li>
+			{{ form.osa_tehtava }}</label></li>
 			<li><label><div>Hyväksyitkö tietoisesti jonkin strategian palojen välisten rajojen merkitsemisessä?</div>
-			{{ form.strategy }}</label></li>
+			{{ form.strategian }}</label></li>
 			<li><label><div>Mitä kriteereitä käytit rajojen merkitsemiseen, jos sellaisia on?</div>
-			{{ form.criteria }}</label></li>
+			{{ form.kriteereita }}</label></li>
 			<li><label><div>Saitko vaikutelman, että tehtävä helpottui vähitellen?</div>
-			{{ form.impression }}</label></li>
-			<li><label><div>Onko sinulla muita kommentteja?</div>
-			{{ form.comments }}</label></li>			
+			{{ form.vaikutelman }}</label></li>
+			<li><label><div>Onko sinulla muita kommentteja?<p>Kommenttisi teht&auml;v&auml;st&auml; ja&nbsp;sovelluksesta sek&auml; mahdolliset ehdotukset teht&auml;v&auml;n&nbsp;/ sovelluksen edelleen kehitt&auml;miseksi ovat eritt&auml;in tervetulleita. Kiitos!</p></div>
+			{{ form.kommentteja }}</label></li>			
 		</ul>
     <button type="submit" class='submitquestionnaire'>L&auml;het&auml;</button>
 </form>

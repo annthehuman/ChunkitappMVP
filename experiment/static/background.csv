@@ -1,5 +1,9 @@
-id,session_key,age,sex,hand,place,language,other_languages,used_language,education,major,degree,dyslexia,hearing,comments
-1,8e9k4,8,OTHER,LEFT,"l,,.m;lsfvsdcsdd",yuhgfhjv,hjbhlglfhaklwb,jhhjbb,DIPLOMA,fwefaes,MATURE,NO,YES,
-2,ifmjj,77,OTHER,LEFT,"kujh,.kjn",jlnkj..,cgvhjbkjn,kjhblkjh,OTHERSECONDARY,sdfghjk,OTHERSECONDARY,NO,YES,
-3,2tggz,11,WOMAN,BOTH,efwf,"sd.,f,/zs",,"fm.,MS,.f",PRIMARY,"f,zsmm",,YES,YES,
-4,zmsl6,23,Man,Rigth,raz,dva,,tri,OtherSecondary,chetire,,Yes,Yes,
+id,session_key,ika,sukupuoli,katisyys,nykyinen_asuinpaikka,aidinkieli,muut_kielet,kielia_kaytat,korkein_tutkinto,paaaine_ala,jos_opiskelija_tutkintoa,lukihairio,kuulonalenema,kommentteja
+1,8e9k4,8,0,0,"l,,.m;lsfvsdcsdd",yuhgfhjv,hjbhlglfhaklwb,jhhjbb,0,fwefaes,0,0,0,
+2,ifmjj,77,0,0,"kujh,.kjn",jlnkj..,cgvhjbkjn,kjhblkjh,0,sdfghjk,0,0,0,
+3,2tggz,11,0,0,efwf,"sd.,f,/zs",,"fm.,MS,.f",0,"f,zsmm",0,0,0,
+4,zmsl6,23,0,0,raz,dva,,tri,0,chetire,0,0,0,
+5,3nzq3,11,Nainen,Oikeakatinen,dfgsd,klfdfklgj,,".,mfxn,mzn",Ylioppilastutkinto,ccc,---------,Ei,Kylla,cc
+6,2eas7,33,Nainen,Vasenkatinen,etgsd,jjlkj,,",n.kjn.k",MuuToisenAsteenTutkinto,kkmk,,Kylla,Ei,x
+7,2eas7,22,Nainen,Vasenkatinen,fff,fff,,fff,MuuToisenAsteenTutkinto,nnmn,,Kylla,Kylla,x
+8,2eas7,33,Nainen,Vasenkatinen,jjjj,jjjjj,nnnn,jjjjj,MuuToisenAsteenTutkinto,mfn,MaisterinTutkinto,Ei,Ei,x

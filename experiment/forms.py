@@ -6,39 +6,40 @@ class checkboxfield(forms.Form):
 
 
 class backgroundForm(forms.ModelForm):
+	yes = 'Kylla'
+	no = 'Ei'
 	yes_no = (
-		('Yes', 'Kyllä'),
-		('No', 'Ei'),
+		(yes, 'Kyllä'),
+		(no, 'Ei'),
 		)
-	degree = forms.CharField(required=False)
-	other_languages = forms.CharField(required=False)
-	comments = forms.CharField(widget=forms.Textarea, required=False)
-	dyslexia = forms.CharField(widget=forms.RadioSelect(choices=yes_no))
-	hearing = forms.CharField(widget=forms.RadioSelect(choices=yes_no))
+	jos_opiskelija_tutkintoa = forms.CharField(required=False, widget=forms.Select(choices=background.degree_choices))
+	muut_kielet = forms.CharField(required=False)
+	kommentteja = forms.CharField(widget=forms.Textarea(), required=False)
+	lukihairio = forms.CharField(widget=forms.RadioSelect(choices=yes_no))
+	kuulonalenema = forms.CharField(widget=forms.RadioSelect(choices=yes_no))
 
 	class Meta:
 		model = background
-		fields = ('age', 'sex', 'hand', 'place', 'language', 'other_languages',\
-		 'used_language', 'education', 'major', 'degree', 'dyslexia', 'hearing', 'comments',)
+		fields = ('ika', 'sukupuoli', 'katisyys', 'nykyinen_asuinpaikka', 'aidinkieli', 'muut_kielet',\
+		 'kielia_kaytat', 'korkein_tutkinto', 'paaaine_ala', 'jos_opiskelija_tutkintoa', 'lukihairio', 'kuulonalenema', 'kommentteja',)
 
 class feedbackForm(forms.ModelForm):
-	instructions = forms.CharField(widget=forms.RadioSelect(choices=feedback.opinion_choices))
-	doing = forms.CharField(widget=forms.RadioSelect(choices=feedback.opinion_choices))
-	simple = forms.CharField(widget=forms.RadioSelect(choices=feedback.opinion_choices))
-	demanding = forms.CharField(widget=forms.RadioSelect(choices=feedback.opinion_choices))
-	pressure = forms.CharField(widget=forms.RadioSelect(choices=feedback.opinion_choices))
-	fun = forms.CharField(widget=forms.RadioSelect(choices=feedback.opinion_choices))
-	reflects = forms.CharField(widget=forms.RadioSelect(choices=feedback.opinion_choices))
-	performance = forms.CharField(widget=forms.RadioSelect(choices=feedback.performance_choices))
-	understanding = forms.CharField(widget=forms.RadioSelect(choices=feedback.understanding_choices))	
-	task = forms.CharField(widget=forms.Textarea, required=False)
-	strategy = forms.CharField(widget=forms.Textarea, required=False)
-	criteria = forms.CharField(widget=forms.Textarea, required=False)
-	impression = forms.CharField(widget=forms.Textarea, required=False)
-	comments = forms.CharField(widget=forms.Textarea, required=False)
+	ohjeet = forms.CharField(widget=forms.RadioSelect(choices=feedback.opinion_choices))
+	mita_tein = forms.CharField(widget=forms.RadioSelect(choices=feedback.opinion_choices))
+	yksinkertainen = forms.CharField(widget=forms.RadioSelect(choices=feedback.opinion_choices))
+	vaativa = forms.CharField(widget=forms.RadioSelect(choices=feedback.opinion_choices))
+	paineita = forms.CharField(widget=forms.RadioSelect(choices=feedback.opinion_choices))
+	hauskaa = forms.CharField(widget=forms.RadioSelect(choices=feedback.opinion_choices))
+	heijastaa = forms.CharField(widget=forms.RadioSelect(choices=feedback.opinion_choices))
+	suoritustasi = forms.CharField(widget=forms.RadioSelect(choices=feedback.performance_choices))
+	ymmarsin = forms.CharField(widget=forms.RadioSelect(choices=feedback.understanding_choices))	
+	osa_ehtava = forms.CharField(widget=forms.Textarea(), required=False)
+	strategian = forms.CharField(widget=forms.Textarea(), required=False)
+	kriteereita = forms.CharField(widget=forms.Textarea(), required=False)
+	vaikutelman = forms.CharField(widget=forms.Textarea(), required=False)
+	kommentteja = forms.CharField(widget=forms.Textarea(), required=False)
 	class Meta:
 		model = feedback
-		fields = ('instructions', 'doing', 'simple', 'demanding', 'pressure',\
-			'fun', 'reflects', 'performance', 'understanding', 'task', 'strategy',\
-			 'criteria', 'impression', 'comments',)
-	
+		fields = ('ohjeet', 'mita_tein', 'yksinkertainen', 'vaativa', 'paineita',\
+			'hauskaa', 'heijastaa', 'suoritustasi', 'ymmarsin', 'osa_tehtava', 'strategian',\
+			 'kriteereita', 'vaikutelman', 'kommentteja',)

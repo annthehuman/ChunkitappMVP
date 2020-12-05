@@ -15,40 +15,40 @@
 	<form method="post"  class="questions-form" autocomplete="off">{% csrf_token %}
 		<ul>
 			<li><label><div class='control-label'>Ikä</div>
-			{{ form.age }}</label></li>
+			{{ form.ika }}</label></li>
 			<li><label><div class='control-label'>Sukupuoli</div>
-			{{ form.sex }}</label></li>
+			{{ form.sukupuoli }}</label></li>
 			<li><label><div class='control-label'>Kätisyys
-			</div>{{ form.hand }}</label></li>			
+			</div>{{ form.katisyys }}</label></li>			
 			<li><label><div class='control-label'>Nykyinen asuinpaikka
-			</div>{{ form.place }}</label></li>
+			</div>{{ form.nykyinen_asuinpaikka }}</label></li>
 			<li><label><div class='control-label'>Äidinkieli
-			</div>{{ form.language }}</label></li>
+			</div>{{ form.aidinkieli }}</label></li>
 			<li><label><div>Muut osaamasi kielet</div>
-			{{ form.other_languages }}</label></li>
+			{{ form.muut_kielet }}</label></li>
 			<li><label><div class='control-label'>Mitä kieliä käytät säännlisesti arjessa?
-			</div>{{ form.used_language }}</label></li>
+			</div>{{ form.kielia_kaytat }}</label></li>
 		</ul>
 	<h2>Koulutus</h2>
 	<ul class='education'>
 		<li><label><div class='control-label'>Korkein suorittamasti tutkinto
-		</div>{{ form.education }}</label></li>
+		</div>{{ form.korkein_tutkinto }}</label></li>
 		<li><label><div class='control-label'>Pääaine / ala
-		</div>{{ form.major }}</label></li>
+		</div>{{ form.paaaine_ala }}</label></li>
 		<li><label><div>Jos olet opiskelija, mitä tutkintoa olet suorittamassa tällä hetkellä?</div>
-		{{ form.degree }}</label></li>
+		{{ form.jos_opiskelija_tutkintoa }}</label></li>
 	</ul>
 	<h2>Terveystiedot</h2>
 	<ul class = 'withradio'>
 		<li><label><div class='control-label'>Onko sinulla diagnosoitu lukihäirio?</div>
-		<div class='radio'>{{ form.dyslexia }}</div></label></li>
+		<div class='radio'>{{ form.lukihairio }}</div></label></li>
 		<li><label><div class='control-label'>Onko sinulla todettu kuulonalenema tai muita kuulemiseen liittyviä ongelmia?</div>
-		<div class='radio'>{{ form.hearing }}</div></label></li>
+		<div class='radio'>{{ form.kuulonalenema }}</div></label></li>
 	</ul>
 	<h2>Muuta</h2>
 	<ul>
 		<li><label><div>Kommentteja ja muita tietoja, jotka voivat olla tutkimuksen kannalta olennaisia:</div>
-		{{ form.comments }}</label></li>
+		{{ form.kommentteja }}</label></li>
 	</ul>
 	<button type="submit" class='submitquestionnaire'>L&auml;het&auml;</button>
 </form>

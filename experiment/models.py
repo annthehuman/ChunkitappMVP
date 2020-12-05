@@ -5,36 +5,37 @@ from django.core.validators import MinValueValidator, MaxValueValidator
 from django.contrib.sessions.models import Session
 
 class background(models.Model):
-	man = 'Man'
-	woman = 'Woman'
-	other = 'Other'
+	man = 'Mies'
+	woman = 'Nainen'
+	other = 'Muu'
 	gender_choices = (
 		(man, 'Mies'),
 		(woman, 'Nainen'),
 		(other, 'Muu'),
 		)
-	right = 'Rigth'
-	left = 'Left'
+	right = 'Oikeakatinen'
+	left = 'Vasenkatinen'
 	both = 'Both'
 	hands_choices = (
 		(right, 'Oikeakätinen'),
 		(left, 'Vasenkätinen'),
 		(both, 'Ambidekstri / molempikätinen'),
 		)
-	primary = 'Primary'
-	basic = 'Basic'
-	mature = 'Mature'
-	othersec = 'OtherSecondary'
-	bachelor = 'Bachelor'
-	candidate = 'Candidate'
-	master = 'Master'
-	diploma = 'Diploma'
+	primary = 'Peruskoulu'
+	basic = 'Peruskoulutus'
+	mature = 'Ylioppilastutkinto'
+	othersec = 'MuuToisenAsteenTutkinto'
+	bachelor = 'AmkTutkinto'
+	candidate = 'KandidaatinTutkinto'
+	master = 'MaisterinTutkinto'
+	diploma = 'DiplomiInsinooritutkinto' 
 	di = 'DI'
-	doctor = 'Doctor'
-	polytech = 'Polytech'
+	doctor = 'TohtorinTutkinto'
+	polytech = 'Ammattikorkeakoulututkinto'
+	none = ''
 	education_choices = (
 		(primary, 'Peruskoulu'),
-		(mature, 'Ylioppilastutkinto '),
+		(mature, 'Ylioppilastutkinto'),
 		(othersec, 'Muu toisen asteen tutkinto'), 
 		(candidate, 'Kandidaatin tutkinto'),
 		(master, 'Maisterin tutkinto'),
@@ -43,6 +44,7 @@ class background(models.Model):
 		(polytech, 'Ammattikorkeakoulututkinto'),
 		)
 	degree_choices = (
+		(none, '---------'),
 		(basic, 'Peruskoulutus'),
 		(mature, 'Ylioppilastutkinto'),
 		(othersec, 'Muu toisen asteen tutkinto'),
@@ -52,33 +54,33 @@ class background(models.Model):
 		(di, 'DI'),
 		(doctor, 'Tohtorin tutkinto'),
 		)
-	yes = 'Yes'
-	no = 'No'
+	yes = 'Kylla'
+	no = 'Ei'
 	yes_no = (
 		(yes, 'Kyllä'),
 		(no, 'Ei'),
 		)
 	session_key = models.CharField(max_length=40)
-	age = models.IntegerField(validators=[MaxValueValidator(100), MinValueValidator(1)])
-	sex = models.CharField(max_length=6, choices=gender_choices)
-	hand = models.CharField(max_length=28, choices=hands_choices)
-	place = models.CharField(max_length=1000, default="nowhere")
-	language = models.CharField(max_length=1000, default="none")
-	other_languages = models.CharField(max_length=1000, default="no")
-	used_language = models.CharField(max_length=1000, default="neither")
-	education = models.CharField(max_length=14, choices=education_choices)
-	major = models.CharField(max_length=1000, default="none")
-	degree = models.CharField(max_length=14, choices=degree_choices)
-	dyslexia = models.CharField(max_length=5, choices=yes_no)
-	hearing = models.CharField(max_length=5, choices=yes_no)
-	comments = models.TextField(default='nothing')
+	ika = models.IntegerField(validators=[MaxValueValidator(100), MinValueValidator(1)])
+	sukupuoli = models.CharField(max_length=6, choices=gender_choices)
+	katisyys = models.CharField(max_length=28, choices=hands_choices)
+	nykyinen_asuinpaikka = models.CharField(max_length=1000, default="nowhere")
+	aidinkieli = models.CharField(max_length=1000, default="none")
+	muut_kielet = models.CharField(max_length=1000, default="no")
+	kielia_kaytat = models.CharField(max_length=1000, default="neither")
+	korkein_tutkinto = models.CharField(max_length=26, choices=education_choices)
+	paaaine_ala = models.CharField(max_length=1000, default="none")
+	jos_opiskelija_tutkintoa  = models.CharField(max_length=26, choices=degree_choices)
+	lukihairio = models.CharField(max_length=5, choices=yes_no)
+	kuulonalenema = models.CharField(max_length=5, choices=yes_no)
+	kommentteja = models.TextField(default='nothing')
 
 class feedback(models.Model):
-	str_disagree = 'StronglyDisagree'
-	disagree = 'Disagree'
-	neither = 'NietherAgreeNorDisagree'
-	agree = 'Agree'
-	str_agree = 'StronglyAgree'
+	str_disagree ='VahvastiEriMielta'
+	disagree ='EriMielta'
+	neither ='EiSamaaEikaEriMielta'
+	agree ='SamaaMielta'
+	str_disagree ='VahvastiSamaaMielta'	
 	opinion_choices = (
 		(str_disagree, 'Vahvasti eri mieltä'),
 		(disagree, 'Eri mieltä'),
@@ -86,21 +88,21 @@ class feedback(models.Model):
 		(agree, 'Samaa mieltä'),
 		(str_disagree, 'Vahvasti samaa mieltä'),	
 		)
-	bad = 'Bad'
-	ok = 'Ok'
-	good = 'Good'
-	vgood = 'VGood'
+	bad ='Huono'
+	ok ='Kohtalainen'
+	good ='Hyva'
+	vgood ='TodellaHyva'
 	performance_choices = (
 		(bad, 'Huono'),
 		(ok, 'Kohtalainen'),
 		(good, 'Hyvä'),
 		(vgood, 'Todella hyvä'),
 		)
-	all_the_time = 'AllTheTime'
-	most_of_the_time = 'MostOfTheTime'
-	some_time = 'SomeTime'
-	very_little_time = 'VeryLittleTime'
-	not_at_all = 'NotAtAll'
+	all_the_time = 'KokoAjan'
+	most_of_the_time = 'SuurimmanOsanAjasta'
+	some_time = 'JonkinVerranAjasta'
+	very_little_time = 'HyvinVahanAjasta'
+	not_at_all = 'EhYhtaan'
 	understanding_choices = (
 		(all_the_time, 'Koko ajan'),
 		(most_of_the_time, 'Suurimman osan ajasta'),
@@ -109,20 +111,20 @@ class feedback(models.Model):
 		(not_at_all, 'En yhtään'),
 		)
 	session_key = models.CharField(max_length=40)
-	instructions = models.CharField(max_length=25, choices=opinion_choices)
-	doing = models.CharField(max_length=25, choices=opinion_choices)
-	simple = models.CharField(max_length=25, choices=opinion_choices)
-	demanding = models.CharField(max_length=25, choices=opinion_choices)
-	pressure = models.CharField(max_length=25, choices=opinion_choices)
-	fun = models.CharField(max_length=25, choices=opinion_choices)
-	reflects = models.CharField(max_length=25, choices=opinion_choices)
-	performance = models.CharField(max_length=25, choices=performance_choices)
-	understanding = models.CharField(max_length=25, choices=understanding_choices)
-	task = models.TextField(default='nothing')
-	strategy = models.TextField(default='nothing')
-	criteria = models.TextField(default='nothing')
-	impression = models.TextField(default='nothing')
-	comments = models.TextField(default='nothing') 
+	ohjeet = models.CharField(max_length=25, choices=opinion_choices)
+	mita_tein = models.CharField(max_length=25, choices=opinion_choices)
+	yksinkertainen = models.CharField(max_length=25, choices=opinion_choices)
+	vaativa = models.CharField(max_length=25, choices=opinion_choices)
+	paineita = models.CharField(max_length=25, choices=opinion_choices)
+	hauskaa = models.CharField(max_length=25, choices=opinion_choices)
+	heijastaa = models.CharField(max_length=25, choices=opinion_choices)
+	suoritustasi = models.CharField(max_length=25, choices=performance_choices)
+	ymmarsin = models.CharField(max_length=25, choices=understanding_choices)
+	osa_tehtava = models.TextField(default='nothing')
+	strategian = models.TextField(default='nothing')
+	kriteereita = models.TextField(default='nothing')
+	vaikutelman = models.TextField(default='nothing')
+	kommentteja = models.TextField(default='nothing') 
 
 
 class test(models.Model):
