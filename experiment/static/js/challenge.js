@@ -1,9 +1,8 @@
 $(function (){ 
    var question = null;
-    $(':input').focus(function() {
+    $(':input').click(function() {
       question = $(this).val();
     });
-
 
  $(document).on('submit',"#post-form-1",function(e) {
     e.preventDefault();
@@ -21,11 +20,13 @@ $(function (){
 },
     })
 });
+
+
 });
 
 $(function (){ 
    var question = null;
-    $(':input').focus(function() {
+    $(':input').click(function() {
       question = $(this).val();
     });
 
@@ -50,7 +51,7 @@ $(function (){
 
 $(function (){ 
    var question = null;
-    $(':input').focus(function() {
+    $(':input').click(function() {
       question = $(this).val();
     });
 
@@ -75,7 +76,7 @@ $(function (){
 
 $(function (){ 
    var question = null;
-    $(':input').focus(function() {
+    $(':input').click(function() {
       question = $(this).val();
     });
 
@@ -100,7 +101,7 @@ $(function (){
 
 $(function (){ 
    var question = null;
-    $(':input').focus(function() {
+    $(':input').click(function() {
       question = $(this).val();
     });
 
@@ -125,7 +126,7 @@ $(function (){
 
 $(function (){ 
    var question = null;
-    $(':input').focus(function() {
+    $(':input').click(function() {
       question = $(this).val();
     });
 
@@ -151,7 +152,7 @@ $(function (){
 
 $(function (){ 
    var question = null;
-    $(':input').focus(function() {
+    $(':input').click(function() {
       question = $(this).val();
     });
 
@@ -177,7 +178,7 @@ $(function (){
 
 $(function (){ 
    var question = null;
-    $(':input').focus(function() {
+    $(':input').click(function() {
       question = $(this).val();
     });
 
@@ -203,7 +204,7 @@ $(function (){
 
 $(function (){ 
    var question = null;
-    $(':input').focus(function() {
+    $(':input').click(function() {
       question = $(this).val();
     });
 
@@ -229,7 +230,7 @@ $(function (){
 
 $(function (){ 
    var question = null;
-    $(':input').focus(function() {
+    $(':input').click(function() {
       question = $(this).val();
     });
 
@@ -255,7 +256,7 @@ $(function (){
 
 $(function (){ 
    var question = null;
-    $(':input').focus(function() {
+    $(':input').click(function() {
       question = $(this).val();
     });
 
@@ -281,7 +282,7 @@ $(function (){
 
 $(function (){ 
    var question = null;
-    $(':input').focus(function() {
+    $(':input').click(function() {
       question = $(this).val();
     });
 
@@ -307,7 +308,7 @@ $(function (){
 
 $(function (){ 
    var question = null;
-    $(':input').focus(function() {
+    $(':input').click(function() {
       question = $(this).val();
     });
 
@@ -333,7 +334,7 @@ $(function (){
 
 $(function (){ 
    var question = null;
-    $(':input').focus(function() {
+    $(':input').click(function() {
       question = $(this).val();
     });
 
@@ -359,7 +360,7 @@ $(function (){
 
 $(function (){ 
    var question = null;
-    $(':input').focus(function() {
+    $(':input').click(function() {
       question = $(this).val();
     });
 
@@ -385,7 +386,7 @@ $(function (){
 
 $(function (){ 
    var question = null;
-    $(':input').focus(function() {
+    $(':input').click(function() {
       question = $(this).val();
     });
 
@@ -411,7 +412,7 @@ $(function (){
 
 $(function (){ 
    var question = null;
-    $(':input').focus(function() {
+    $(':input').click(function() {
       question = $(this).val();
     });
 
@@ -437,7 +438,7 @@ $(function (){
 
 $(function (){ 
    var question = null;
-    $(':input').focus(function() {
+    $(':input').click(function() {
       question = $(this).val();
     });
 
@@ -463,7 +464,7 @@ $(function (){
 
 $(function (){ 
    var question = null;
-    $(':input').focus(function() {
+    $(':input').click(function() {
       question = $(this).val();
     });
 
@@ -489,7 +490,7 @@ $(function (){
 
 $(function (){ 
    var question = null;
-    $(':input').focus(function() {
+    $(':input').click(function() {
       question = $(this).val();
     });
 
@@ -515,7 +516,7 @@ $(function (){
 
 $(function (){ 
    var question = null;
-    $(':input').focus(function() {
+    $(':input').click(function() {
       question = $(this).val();
     });
 
@@ -541,7 +542,7 @@ $(function (){
 
 $(function (){ 
    var question = null;
-    $(':input').focus(function() {
+    $(':input').click(function() {
       question = $(this).val();
     });
 
@@ -567,7 +568,7 @@ $(function (){
 
 $(function (){ 
    var question = null;
-    $(':input').focus(function() {
+    $(':input').click(function() {
       question = $(this).val();
     });
 
@@ -593,7 +594,7 @@ $(function (){
 
 $(function (){ 
    var question = null;
-    $(':input').focus(function() {
+    $(':input').click(function() {
       question = $(this).val();
     });
 
@@ -619,7 +620,7 @@ $(function (){
 
 $(function (){ 
    var question = null;
-    $(':input').focus(function() {
+    $(':input').click(function() {
       question = $(this).val();
     });
 
@@ -645,7 +646,7 @@ $(function (){
 
 $(function (){ 
    var question = null;
-    $(':input').focus(function() {
+    $(':input').click(function() {
       question = $(this).val();
     });
 
@@ -671,7 +672,7 @@ $(function (){
 
 $(function (){ 
    var question = null;
-    $(':input').focus(function() {
+    $(':input').click(function() {
       question = $(this).val();
     });
 
@@ -697,7 +698,7 @@ $(function (){
 
 $(function (){ 
    var question = null;
-    $(':input').focus(function() {
+    $(':input').click(function() {
       question = $(this).val();
     });
 
@@ -723,7 +724,7 @@ $(function (){
 
 $(function (){ 
    var question = null;
-    $(':input').focus(function() {
+    $(':input').click(function() {
       question = $(this).val();
     });
 
@@ -749,7 +750,7 @@ $(function (){
 
 $(function (){ 
    var question = null;
-    $(':input').focus(function() {
+    $(':input').click(function() {
       question = $(this).val();
     });
 
@@ -775,7 +776,7 @@ $(function (){
 
 $(function (){ 
    var question = null;
-    $(':input').focus(function() {
+    $(':input').click(function() {
       question = $(this).val();
     });
 
@@ -801,7 +802,7 @@ $(function (){
 
 $(function (){ 
    var question = null;
-    $(':input').focus(function() {
+    $(':input').click(function() {
       question = $(this).val();
     });
 
@@ -827,7 +828,7 @@ $(function (){
 
 $(function (){ 
    var question = null;
-    $(':input').focus(function() {
+    $(':input').click(function() {
       question = $(this).val();
     });
 
@@ -853,7 +854,7 @@ $(function (){
 
 $(function (){ 
    var question = null;
-    $(':input').focus(function() {
+    $(':input').click(function() {
       question = $(this).val();
     });
 
@@ -879,7 +880,7 @@ $(function (){
 
 $(function (){ 
    var question = null;
-    $(':input').focus(function() {
+    $(':input').click(function() {
       question = $(this).val();
     });
 
@@ -905,7 +906,7 @@ $(function (){
 
 $(function (){ 
    var question = null;
-    $(':input').focus(function() {
+    $(':input').click(function() {
       question = $(this).val();
     });
 
@@ -931,7 +932,7 @@ $(function (){
 
 $(function (){ 
    var question = null;
-    $(':input').focus(function() {
+    $(':input').click(function() {
       question = $(this).val();
     });
 
@@ -957,7 +958,7 @@ $(function (){
 
 $(function (){ 
    var question = null;
-    $(':input').focus(function() {
+    $(':input').click(function() {
       question = $(this).val();
     });
 
@@ -983,7 +984,7 @@ $(function (){
 
 $(function (){ 
    var question = null;
-    $(':input').focus(function() {
+    $(':input').click(function() {
       question = $(this).val();
     });
 
@@ -1009,7 +1010,7 @@ $(function (){
 
 $(function (){ 
    var question = null;
-    $(':input').focus(function() {
+    $(':input').click(function() {
       question = $(this).val();
     });
 
@@ -1035,7 +1036,7 @@ $(function (){
 
 $(function (){ 
    var question = null;
-    $(':input').focus(function() {
+    $(':input').click(function() {
       question = $(this).val();
     });
 
@@ -1061,7 +1062,7 @@ $(function (){
 
 $(function (){ 
    var question = null;
-    $(':input').focus(function() {
+    $(':input').click(function() {
       question = $(this).val();
     });
 
@@ -1087,7 +1088,7 @@ $(function (){
 
 $(function (){ 
    var question = null;
-    $(':input').focus(function() {
+    $(':input').click(function() {
       question = $(this).val();
     });
 

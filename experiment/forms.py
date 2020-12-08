@@ -33,7 +33,7 @@ class feedbackForm(forms.ModelForm):
 	heijastaa = forms.CharField(widget=forms.RadioSelect(choices=feedback.opinion_choices))
 	suoritustasi = forms.CharField(widget=forms.RadioSelect(choices=feedback.performance_choices))
 	ymmarsin = forms.CharField(widget=forms.RadioSelect(choices=feedback.understanding_choices))	
-	osa_ehtava = forms.CharField(widget=forms.Textarea(), required=False)
+	osa_tehtava = forms.CharField(widget=forms.Textarea(), required=False)
 	strategian = forms.CharField(widget=forms.Textarea(), required=False)
 	kriteereita = forms.CharField(widget=forms.Textarea(), required=False)
 	vaikutelman = forms.CharField(widget=forms.Textarea(), required=False)
