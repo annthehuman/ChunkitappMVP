@@ -1,5 +1,10 @@
-id,session_key,ohjeet,mita_tein,yksinkertainen,vaativa,paineita,hauskaa,heijastaa,suoritustasi,ymmarsin,osa_tehtava,strategian,kriteereita,vaikutelman,kommentteja
+id,session_key,ohjeet,mita_tein,yksinkertainen,vaativa,paineita,hauskaa,heijastaa,suoritustasi,ymmarsin,tehtava,strategian,kriteereita,vaikutelman,kommentteja
 1,p9c5v,0,0,0,0,0,0,0,0,0,,,,,
 2,zmsl6,0,0,0,0,0,0,0,0,0,chetire,dva,tri,raz,pyat
 3,w6cwb,VahvastiSamaaMielta,EriMielta,EiSamaaEikaEriMielta,SamaaMielta,VahvastiSamaaMielta,VahvastiSamaaMielta,EriMielta,Hyva,HyvinVahanAjasta,x,x,x,x,x
 4,2eas7,VahvastiSamaaMielta,EriMielta,EiSamaaEikaEriMielta,SamaaMielta,VahvastiSamaaMielta,VahvastiSamaaMielta,EriMielta,Huono,HyvinVahanAjasta,x,x,x,x,x
+5,61rub,VahvastiSamaaMielta,EiSamaaEikaEriMielta,VahvastiSamaaMielta,SamaaMielta,SamaaMielta,VahvastiSamaaMielta,EriMielta,TodellaHyva,JonkinVerranAjasta,,,,,
+6,den1m,VahvastiSamaaMielta,EriMielta,SamaaMielta,SamaaMielta,EiSamaaEikaEriMielta,VahvastiSamaaMielta,EiSamaaEikaEriMielta,Hyva,HyvinVahanAjasta,nothing,,,,
+7,den1m,EriMielta,SamaaMielta,EiSamaaEikaEriMielta,VahvastiSamaaMielta,VahvastiSamaaMielta,SamaaMielta,SamaaMielta,Hyva,JonkinVerranAjasta,nothing,,,,
+8,a11nk,VahvastiSamaaMielta,EriMielta,EiSamaaEikaEriMielta,SamaaMielta,VahvastiSamaaMielta,EiSamaaEikaEriMielta,EriMielta,TodellaHyva,HyvinVahanAjasta,,,,,
+9,qhcal,VahvastiSamaaMielta,EriMielta,EiSamaaEikaEriMielta,SamaaMielta,VahvastiSamaaMielta,VahvastiSamaaMielta,SamaaMielta,Hyva,HyvinVahanAjasta,,,,,

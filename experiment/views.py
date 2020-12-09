@@ -26,7 +26,7 @@ def get_ip(request):
 
 def consent(request):
 	if request.method == 'POST':
-		if request.POST['consent'] == "Olen samaa mieltä":
+		if request.POST['consent'] == "Hyväksyn":
 			ip = get_ip(request)
 			#print(ip)
 			#if sessions.objects.filter(ip=str(ip)):
@@ -59,7 +59,7 @@ def consent(request):
 				)
 			#print(request.session[x])
 			return redirect('questionnaire')
-		elif request.POST['consent'] == "En ole samaa mieltä":
+		elif request.POST['consent'] == "En hyväksy":
 			return redirect('thanks')
 	return render(request, 'experiment/consent.html', {})
 

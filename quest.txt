@@ -23,7 +23,7 @@
 23 Pitääkö puhuja lasten kanssa pelaamista turhana? 
 24 Kävikö puhuja hautausmaalla? 
 25 Tapahtuiko suunnistus Helsingissä? 
-26 Pelaako joukkue futsalia sisällä? 
+26 Aikooko joukkue pelata talvella futsalia? 
 27 Juoko puhuja vaaleaa glögiä? 
 28 Tarvitseeko puhujan mukaan kitaraa opetellessa osata nuotteja? 
 29 Pitääkö puhujan perhe eläimistä? 

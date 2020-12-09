@@ -32,6 +32,11 @@ a:active {
 	border-radius: 5px;
 }
 
+button:active {
+	border: 2px solid black;
+	border-radius: 5px;
+}
+
 input[type=submit] {
 	border: 2px solid #b4b4b4;
 	padding: 5px 20px 5px 20px;

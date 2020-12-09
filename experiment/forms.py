@@ -33,7 +33,7 @@ class feedbackForm(forms.ModelForm):
 	heijastaa = forms.CharField(widget=forms.RadioSelect(choices=feedback.opinion_choices))
 	suoritustasi = forms.CharField(widget=forms.RadioSelect(choices=feedback.performance_choices))
 	ymmarsin = forms.CharField(widget=forms.RadioSelect(choices=feedback.understanding_choices))	
-	osa_tehtava = forms.CharField(widget=forms.Textarea(), required=False)
+	tehtava = forms.CharField(widget=forms.Textarea(), required=False)
 	strategian = forms.CharField(widget=forms.Textarea(), required=False)
 	kriteereita = forms.CharField(widget=forms.Textarea(), required=False)
 	vaikutelman = forms.CharField(widget=forms.Textarea(), required=False)
@@ -41,5 +41,5 @@ class feedbackForm(forms.ModelForm):
 	class Meta:
 		model = feedback
 		fields = ('ohjeet', 'mita_tein', 'yksinkertainen', 'vaativa', 'paineita',\
-			'hauskaa', 'heijastaa', 'suoritustasi', 'ymmarsin', 'osa_tehtava', 'strategian',\
+			'hauskaa', 'heijastaa', 'suoritustasi', 'ymmarsin', 'tehtava', 'strategian',\
 			 'kriteereita', 'vaikutelman', 'kommentteja',)

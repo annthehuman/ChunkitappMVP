@@ -8,7 +8,7 @@
 8 5_lehtiartikkeli.mp3 38
 9 6_kaukomatka.mp3 34
 10 7_haastattelua.mp3 65
-11 8_sosiaalinen-media.mp3 61
+11 8_sosiaalinenmedia.mp3 61
 12 9_lomailu.mp3 51
 13 10_ryyppääminen.mp3 66
 14 11_koreografia.mp3 60

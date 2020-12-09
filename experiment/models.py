@@ -120,7 +120,7 @@ class feedback(models.Model):
 	heijastaa = models.CharField(max_length=25, choices=opinion_choices)
 	suoritustasi = models.CharField(max_length=25, choices=performance_choices)
 	ymmarsin = models.CharField(max_length=25, choices=understanding_choices)
-	osa_tehtava = models.TextField(default='nothing')
+	tehtava = models.TextField(default='nothing')
 	strategian = models.TextField(default='nothing')
 	kriteereita = models.TextField(default='nothing')
 	vaikutelman = models.TextField(default='nothing')

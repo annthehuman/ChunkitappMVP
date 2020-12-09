@@ -1184,5 +1184,5 @@ function nextstep() {
 };
 
     function handler(lnk_obj){
-      lnk_obj.innerHTML = (lnk_obj.innerHTML == 'Tauko') ? 'Edetä' : 'Tauko' ;
+      lnk_obj.innerHTML = (lnk_obj.innerHTML == 'Tauko') ? 'Jatka' : 'Tauko' ;
     };
