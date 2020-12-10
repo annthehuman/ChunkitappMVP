@@ -1,11 +1,21 @@
 id,session_key,ika,sukupuoli,katisyys,nykyinen_asuinpaikka,aidinkieli,muut_kielet,kielia_kaytat,korkein_tutkinto,paaaine_ala,jos_opiskelija_tutkintoa,lukihairio,kuulonalenema,kommentteja
-1,8e9k4,8,0,0,"l,,.m;lsfvsdcsdd",yuhgfhjv,hjbhlglfhaklwb,jhhjbb,0,fwefaes,0,0,0,
-2,ifmjj,77,0,0,"kujh,.kjn",jlnkj..,cgvhjbkjn,kjhblkjh,0,sdfghjk,0,0,0,
-3,2tggz,11,0,0,efwf,"sd.,f,/zs",,"fm.,MS,.f",0,"f,zsmm",0,0,0,
-4,zmsl6,23,0,0,raz,dva,,tri,0,chetire,0,0,0,
-5,3nzq3,11,Nainen,Oikeakatinen,dfgsd,klfdfklgj,,".,mfxn,mzn",Ylioppilastutkinto,ccc,---------,Ei,Kylla,cc
-6,2eas7,33,Nainen,Vasenkatinen,etgsd,jjlkj,,",n.kjn.k",MuuToisenAsteenTutkinto,kkmk,,Kylla,Ei,x
-7,2eas7,22,Nainen,Vasenkatinen,fff,fff,,fff,MuuToisenAsteenTutkinto,nnmn,,Kylla,Kylla,x
-8,2eas7,33,Nainen,Vasenkatinen,jjjj,jjjjj,nnnn,jjjjj,MuuToisenAsteenTutkinto,mfn,MaisterinTutkinto,Ei,Ei,x
-9,den1m,7,Mies,Vasenkatinen,i,j,,l,Ylioppilastutkinto,klk,,Kylla,Ei,
-10,qhcal,5,Nainen,Vasenkatinen,k,h,,f,KandidaatinTutkinto,l,,Kylla,Ei,n
+1,lo2ky,66,0,0,"kjnmn.,m",".,.,m.,m","hjcvh,hbjhnkl;l","cfvbhknml,;",0,nmnmn,0,0,0,mnmm
+2,v149z,27,0,0,Helsinki,Russian,English,"Russian, English",0,Cognitive Science,0,0,0,
+3,eorwm,27,0,0,Helsinki,Russian,English,"Russian, English",0,Linguistics,0,0,0,
+4,hihx5,27,0,0,Helsinki,Russian,English,"Russian, English",0,Linguistics,0,0,0,
+5,94i8i,23,0,0,1,2,,3,0,4,0,0,0,1
+6,ez8im,44,0,0,raz,dva,tri,chetire,0,pyat,0,0,0,x
+7,b286r,22,Nainen,Vasenkatinen,a,b,,d,MaisterinTutkinto,e,,Ei,Kylla,x
+8,x2ubo,27,Nainen,Oikeakatinen,h,e,ll,o,MaisterinTutkinto,xxx,,Kylla,Kylla,
+9,9qs2y,1,Nainen,Oikeakatinen,q,qq,,qqq,Peruskoulu,qwe,,Kylla,Ei,
+10,do151,25,Nainen,Vasenkatinen,Helsinki,suomi,,suomi ruotsi englanti,KandidaatinTutkinto,Fonetiikka,,Ei,Ei,
+11,d1iks,28,Nainen,Oikeakatinen,Espoo,Suomi,Englanti,Suomi ja englanti,KandidaatinTutkinto,Fonetiikka,MaisterinTutkinto,Ei,Ei,
+12,1sycy,20,Mies,Oikeakatinen,Helsinki,suomi,"englanti, ranska, ruotsi","englanti, suomi",Ylioppilastutkinto,Lingvistiikka,KandidaatinTutkinto,Ei,Ei,
+13,do151,25,Nainen,Vasenkatinen,Helsinki,suomi,,suomi,KandidaatinTutkinto,Fon,,Ei,Ei,
+14,5esyc,21,Nainen,Oikeakatinen,Helsinki,suomi,"ruotsi, saksa, englanti, kiina","suomi, englanti",Ylioppilastutkinto,Yleissivistävä koulutus,KandidaatinTutkinto,Ei,Ei,:-)
+15,ke3y7,21,Nainen,Oikeakatinen,Helsinki,suomi,,"suomi, englanti",Ylioppilastutkinto,:-),KandidaatinTutkinto,Ei,Ei,
+16,wxaaf,1,Mies,Vasenkatinen,ili,yjgm,,dead,MuuToisenAsteenTutkinto,ndb,Ylioppilastutkinto,Ei,Kylla,stand
+17,jsq0b,2,Mies,Oikeakatinen,e,e,e,e,Peruskoulu,e,Peruskoulutus,Ei,Kylla,
+18,ndfbc,27,Nainen,Oikeakatinen,q,w,,e,Peruskoulu,r,Ylioppilastutkinto,Ei,Ei,
+19,ndfbc,27,Nainen,Oikeakatinen,q,e,,e,MuuToisenAsteenTutkinto,r,,Ei,Kylla,
+20,rot3e,4,Mies,Vasenkatinen,q,w,,e,MuuToisenAsteenTutkinto,e,Peruskoulutus,Ei,Kylla,
