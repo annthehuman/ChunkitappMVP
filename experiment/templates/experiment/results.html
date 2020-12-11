@@ -30,6 +30,7 @@
 
 <section>
  <a class='save' href='{% static 'out.csv' %}' download>Save Table</a>
+    {{ data }}
 	<table>
 	{%  for i in o %}
 	<tr>

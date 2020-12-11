@@ -235,6 +235,7 @@ def results(request):
 					if table[0][n] == list(results_dict.values())[j][res][0]:
 						table[i][n] = list(results_dict.values())[j][res][1][k]
 			i += 1
+	print(len(table))
 	table = sorted(table, key=lambda x: x[0])
 	table[0][0] = ''
 	table[1][0] = ''
@@ -245,10 +246,13 @@ def results(request):
 	with open(os.path.join('experiment/static/', 'out.csv'), 'w', newline='') as of:
 		wRt = csv.writer(of)
 		wRt.writerows(table)
-	#print(table)
+	if len(table) <= 2:
+		data = 'No data'
+	else:
+		data = ''
 	#print(results_dict)
 	#print(list(results_dict.values())[0][0][1])
-	return render(request, 'experiment/results.html', {'o': table, 'length': l, 'width': w})
+	return render(request, 'experiment/results.html', {'o': table, 'length': l, 'width': w, 'data': data})
 
 
 def questions(request):
@@ -303,39 +307,49 @@ def questions(request):
 	return render(request, 'experiment/questions.html', {'question' : question_table})
 
 def backgroundRES(request):
-	table = background.objects.all().values()
-	table_list = []
-	#table.append()
-	for tab in table:
-		table_list.append(list(tab.values()))
-	tab_keys = list(tab.keys())
-	background_table = [[0 for i in range(len(tab_keys))] for j in range(len(table_list)+1)]
-	for n in range(len(tab_keys)):
-		background_table[0][n] = tab_keys[n]
+	try:
+		table = background.objects.all().values()
+		table_list = []
+		#table.append()
+		for tab in table:
+			table_list.append(list(tab.values()))
+		tab_keys = list(tab.keys())
+		background_table = [[0 for i in range(len(tab_keys))] for j in range(len(table_list)+1)]
+		for n in range(len(tab_keys)):
+			background_table[0][n] = tab_keys[n]
+			for k in range(1, len(table_list)+1):
+				background_table[k][n] = table_list[k-1][n]
 		for k in range(1, len(table_list)+1):
-			background_table[k][n] = table_list[k-1][n]
-	for k in range(1, len(table_list)+1):
-		background_table[k][1] = background_table[k][1][:5]
-	with open(os.path.join('experiment/static/', 'background.csv'), 'w', newline='') as of:
-		wRt = csv.writer(of)
-		wRt.writerows(background_table)	
-	return render(request, 'experiment/background_results.html', {'table': background_table})
+			background_table[k][1] = background_table[k][1][:5]
+		with open(os.path.join('experiment/static/', 'background.csv'), 'w', newline='') as of:
+			wRt = csv.writer(of)
+			wRt.writerows(background_table)	
+		no_data = ''
+	except:
+		background_table = ''
+		no_data = 'No data'
+	return render(request, 'experiment/background_results.html', {'table': background_table, 'data': no_data})
 
 def feedbackRES(request):
-	table = feedback.objects.all().values()
-	table_list = []
-	#table.append()
-	for tab in table:
-		table_list.append(list(tab.values()))
-	tab_keys = list(tab.keys())
-	feedback_table = [[0 for i in range(len(tab_keys))] for j in range(len(table_list)+1)]
-	for n in range(len(tab_keys)):
-		feedback_table[0][n] = tab_keys[n]
+	try:
+		table = feedback.objects.all().values()
+		table_list = []
+		#table.append()
+		for tab in table:
+			table_list.append(list(tab.values()))
+		tab_keys = list(tab.keys())
+		feedback_table = [[0 for i in range(len(tab_keys))] for j in range(len(table_list)+1)]
+		for n in range(len(tab_keys)):
+			feedback_table[0][n] = tab_keys[n]
+			for k in range(1, len(table_list)+1):
+				feedback_table[k][n] = table_list[k-1][n]
 		for k in range(1, len(table_list)+1):
-			feedback_table[k][n] = table_list[k-1][n]
-	for k in range(1, len(table_list)+1):
-		feedback_table[k][1] = feedback_table[k][1][:5]
-	with open(os.path.join('experiment/static/', 'feedback.csv'), 'w', newline='') as of:
-		wRt = csv.writer(of)
-		wRt.writerows(feedback_table)	
-	return render(request, 'experiment/feedback_results.html', {'table': feedback_table})
+			feedback_table[k][1] = feedback_table[k][1][:5]
+		with open(os.path.join('experiment/static/', 'feedback.csv'), 'w', newline='') as of:
+			wRt = csv.writer(of)
+			wRt.writerows(feedback_table)	
+		no_data = ''
+	except:
+		feedback_table = ''
+		no_data = 'No data'
+	return render(request, 'experiment/feedback_results.html', {'table': feedback_table, 'data': no_data})

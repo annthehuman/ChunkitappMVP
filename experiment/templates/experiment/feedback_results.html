@@ -35,6 +35,7 @@
 
 <section class='feedback'>
 <a class='save' href='{% static 'feedback.csv' %}' download>Save Table</a>
+	{{ data }}
 	<table>
 	{%  for i in table %}
 	<tr>
