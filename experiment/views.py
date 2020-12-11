@@ -43,7 +43,7 @@ def consent(request):
 				Session.objects.filter(session_key=session).delete()
 			global x
 			x = str(uuid.uuid4())
-			request.session.set_expiry(3600)
+			request.session.set_expiry(5400)
 			request.session[x]=x
 			#print(request.session[x])
 			request.session.save()
