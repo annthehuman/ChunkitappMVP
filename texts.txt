@@ -1,6 +1,6 @@
 1 practice_ajantaju.mp3 74
 2 practice_palace.mp3 58
-3 practice_kenkasuunnittelija.mp3 66
+3 practice_kenkasuunnittelija.mp3 65
 4 1_tiedekulma.mp3 77
 5 2_Ismo_Alanko.mp3 76
 6 3_järvet.mp3 49
@@ -32,7 +32,7 @@
 32 29_tinnitus.mp3 39
 33 30_watercolours.mp3 58
 34 31_adhd.mp3 51
-35 32_ikaluokat.mp3 65
+35 32_ikaluokat.mp3 67
 36 33_kasvotusten.mp3 31
 37 34_kirja.mp3 95
 38 35_koyhyys2.mp3 53
